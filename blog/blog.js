@@ -96,13 +96,19 @@
   links.forEach((a, i) => a.addEventListener('click', () => { pinned = i; }));
   ['wheel', 'touchstart', 'keydown'].forEach((t) => window.addEventListener(t, () => { pinned = -1; }, { passive: true }));
   function spy() {
-    let current = 0;
+    // Each heading switches on once it scrolls past a line a third of the way down the screen.
+    // Short sections at the end can never get that far, so those headings share the last stretch of scrolling evenly.
     const line = Math.max(140, window.innerHeight * 0.3);
-    headings.forEach((h, i) => { if (h.getBoundingClientRect().top < line) current = i; });
-    // Short sections at the end never reach the line, so at the bottom pick the last heading on screen.
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
-      headings.forEach((h, i) => { if (h.getBoundingClientRect().top < window.innerHeight) current = i; });
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const at = headings.map((h) => h.getBoundingClientRect().top + window.scrollY - line);
+    const firstStuck = at.findIndex((a) => a > maxScroll - 1);
+    if (firstStuck >= 0) {
+      const from = firstStuck > 0 ? Math.min(at[firstStuck - 1], maxScroll) : 0;
+      const n = at.length - firstStuck;
+      for (let j = firstStuck; j < at.length; j++) at[j] = from + (maxScroll - from) * (j - firstStuck + 1) / n - 1;
     }
+    let current = 0;
+    at.forEach((a, i) => { if (window.scrollY >= a) current = i; });
     if (pinned >= 0) current = pinned;
     links.forEach((a, i) => a.classList.toggle('active', i === current));
     if (progress && article) {
