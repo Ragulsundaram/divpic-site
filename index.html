@@ -3,38 +3,521 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DivPic Support</title>
-  <meta name="description" content="DivPic captures any part of a web page as a PNG or SVG, or copies it into Figma as editable layers.">
+  <title>DivPic: grab any part of the web</title>
+  <meta name="description" content="DivPic captures any element or full page as a PNG or SVG, or pastes it into Figma as editable, layered frames. For Chrome, Firefox and Safari.">
+  <meta property="og:title" content="DivPic: grab any part of the web">
+  <meta property="og:description" content="Click any element. Save it as PNG or SVG, or paste it into Figma as editable layers.">
+  <meta property="og:image" content="icon.png">
+  <link rel="canonical" href="https://ragulsundaram.github.io/divpic-site/">
   <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="icon.png" alt="">DivPic</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#modes">What it does</a>
+      <a href="#how">How it works</a>
+      <a href="#figma">Figma mode</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="#faq">Help</a>
+    </nav>
+    <div class="get-menu">
+      <button class="btn solid sm" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu-list">Get DivPic<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="get-menu-list" id="get-menu-list" role="menu" hidden>
+        <a role="menuitem" href="https://chromewebstore.google.com/detail/divpic/lpdabdkfnmackfinabbgelafogmahjni" target="_blank" rel="noopener"><img src="images/browsers/chrome.svg" alt="" width="24" height="24"><span><strong>Chrome</strong><small>Also Arc, Edge and Brave</small></span></a>
+        <a role="menuitem" href="https://addons.mozilla.org/firefox/addon/divpic/" target="_blank" rel="noopener"><img src="images/browsers/firefox.svg" alt="" width="24" height="24"><span><strong>Firefox</strong><small>Firefox Add-ons</small></span></a>
+        <div class="soon" aria-disabled="true"><img src="images/browsers/safari.svg" alt="" width="24" height="24"><span><strong>Safari</strong><small>Coming soon to the Mac App Store</small></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <main>
-  <header><img src="icon.png" alt=""><a href="./">DivPic</a></header>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><i></i>Free for Chrome, Firefox and Safari</div>
+      <h1>Grab any part of the <span class="hl">web</span>.</h1>
+      <p class="lede">Point at a button, a card, a whole page. DivPic saves it as a crisp PNG or SVG, or drops it into Figma as layers you can actually edit.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#get">Add DivPic to your browser</a>
+        <a class="btn" href="#how">See how it works</a>
+      </div>
+      <p class="platforms">No account needed for screenshots. Nothing gets uploaded.</p>
 
-  <h1>Capture any part of a web page</h1>
-  <p class="muted">Save it as a PNG or SVG, copy it to the clipboard, or paste it into Figma as editable frames. Available for Chrome, Firefox and Safari.</p>
+      <div class="stage" aria-hidden="true">
+        <div class="demo-badge"><i class="pulse"></i><span class="on-hover">Hover over the page, then click to select</span><span class="on-touch">Tap anything to select it</span></div>
+        <div class="browser">
+          <div class="bw-top">
+            <div class="bw-dots"><i></i><i></i><i></i></div>
+            <div class="bw-tab on"><span class="fav"></span>Lumen · Overview<span class="x">×</span></div>
+            <div class="bw-tab"><span class="fav alt"></span>Docs</div>
+            <span class="bw-plus">+</span>
+          </div>
+          <div class="bw-bar">
+            <span class="bw-nav"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></span>
+            <div class="bw-url"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>app.lumen.io<em>/overview</em></span></div>
+            <span class="bw-ext"><img src="icon.png" alt=""><span class="bw-avatar">R</span></span>
+          </div>
+          <div class="page app" id="demo-page">
+            <aside class="app-side">
+              <div class="app-brand"><span class="app-mark"></span>Lumen</div>
+              <span class="app-nav on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Overview</span><span class="app-nav"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Analytics</span><span class="app-nav"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>Customers</span><span class="app-nav"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>Reports</span><span class="app-nav"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>Settings</span>
+              <div class="app-upgrade"><strong>Pro trial</strong><span>9 days left</span><span class="app-mini-btn">Upgrade</span></div>
+            </aside>
+            <div class="app-main">
+              <div class="app-head">
+                <div><strong class="app-title">Overview</strong><span class="app-sub">Last 30 days</span></div>
+                <span class="app-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Search<kbd>⌘K</kbd></span>
+                <span class="app-btn">Export</span>
+              </div>
+              <div class="app-kpis"><div class="app-kpi"><span class="app-label">Revenue</span><strong>$48,210</strong><span class="chip up">+12.4%</span></div><div class="app-kpi"><span class="app-label">Active users</span><strong>2,431</strong><span class="chip up">+5.1%</span></div><div class="app-kpi"><span class="app-label">Churn</span><strong>1.8%</strong><span class="chip down">−0.3%</span></div></div>
+              <div class="app-grid">
+                <section class="app-card app-chart" data-initial>
+                  <div class="app-card-head"><div><span class="app-label">Revenue</span><strong>$48,210</strong></div><span class="app-legend"><i></i>This month<i class="prev"></i>Last month</span></div>
+                  <svg class="app-plot" viewBox="0 0 400 130" preserveAspectRatio="none">
+                    <defs><linearGradient id="app-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity=".35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient></defs>
+                    <path class="grid" d="M0 32H400M0 65H400M0 98H400"/>
+                    <path class="prev" d="M0 100 C40 92 70 96 100 84 S160 70 200 74 S270 58 300 62 S360 46 400 50"/>
+                    <path class="area" d="M0 96 C40 80 70 88 100 70 S160 50 200 56 S260 30 300 36 S360 14 400 18 V130 H0Z"/>
+                    <path class="line" d="M0 96 C40 80 70 88 100 70 S160 50 200 56 S260 30 300 36 S360 14 400 18"/>
+                  </svg>
+                </section>
+                <section class="app-card app-list">
+                  <div class="app-card-head"><span class="app-label">Top pages</span></div>
+                  <div class="app-row"><span>/pricing</span><span class="app-bar"><b style="width:84%"></b></span><em>42%</em></div><div class="app-row"><span>/blog</span><span class="app-bar"><b style="width:56%"></b></span><em>28%</em></div><div class="app-row"><span>/docs</span><span class="app-bar"><b style="width:36%"></b></span><em>18%</em></div><div class="app-row"><span>/signup</span><span class="app-bar"><b style="width:24%"></b></span><em>12%</em></div>
+                </section>
+              </div>
+            </div>
+            <div class="cursor team"><svg viewBox="0 0 24 24"><path d="M3 2l18 8-8 2.5L10 21z"/></svg><span>Teammate</span></div>
+            <div class="hover-box" hidden></div>
+            <div class="sel"><i></i><i></i><i></i><i></i><span class="size"></span></div>
+          </div>
+        </div>
+        <div class="cursor you"><svg viewBox="0 0 24 24"><path d="M3 2l18 8-8 2.5L10 21z"/></svg><span>You</span></div>
+        <!-- Mirrors DivPic's real toolbar (toolbar.js, 4.2.1 release: no Inspect button). -->
+        <div class="dp-bar">
+          <span class="dp-grip"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><circle cx="5" cy="3" r="1"/><circle cx="11" cy="3" r="1"/><circle cx="5" cy="8" r="1"/><circle cx="11" cy="8" r="1"/><circle cx="5" cy="13" r="1"/><circle cx="11" cy="13" r="1"/></svg></span>
+          <span class="dp-brand"><img class="dp-logo" alt="" src="icon.png"><span class="dp-name">DivPic</span></span>
+          <span class="dp-sep"></span>
+          <span class="dp-figma"><span class="dp-figma-label">Figma</span><span class="dp-switch"></span></span>
+          <span class="dp-sep"></span>
+          <span class="dp-opts">
+            <span class="seg">
+              <span class="tb on"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.25" y="3.25" width="9.5" height="9.5" rx="2.2"/></svg></span>
+              <span class="tb"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5.5" y="5.5" width="7.5" height="7.5" rx="1.8"/><path d="M10 3.25H4.6A1.35 1.35 0 0 0 3.25 4.6V10" stroke-linecap="round"/></svg></span>
+            </span>
+            <span class="seg">
+              <span class="tb"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v6.4"/><path d="M5.3 6.4 8 9.1l2.7-2.7"/><path d="M3.2 12.4h9.6"/></svg></span>
+              <span class="tb on"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3.5" y="3.2" width="9" height="10.3" rx="1.8"/><path d="M6 3.2v-.5A1.1 1.1 0 0 1 7.1 1.6h1.8A1.1 1.1 0 0 1 10 2.7v.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
+            <span class="seg seg-text"><span class="tb on">PNG</span><span class="tb">SVG</span></span>
+          </span>
+          <span class="dp-sep"></span>
+          <span class="dp-btn dp-btn-primary"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg>Select Element</span>
+          <span class="dp-btn"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V3.5A1.5 1.5 0 0 1 3.5 2H6"/><path d="M10 2h2.5A1.5 1.5 0 0 1 14 3.5V6"/><path d="M14 10v2.5a1.5 1.5 0 0 1-1.5 1.5H10"/><path d="M6 14H3.5A1.5 1.5 0 0 1 2 12.5V10"/></svg>Full Page</span>
+          <span class="dp-sep"></span>
+          <span class="dp-iconbtn"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z"/></svg></span>
+          <span class="dp-iconbtn"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <h2>Getting started on Safari</h2>
-  <ol>
-    <li>Install DivPic from the Mac App Store and open the DivPic app once.</li>
-    <li>In Safari, open <strong>Settings → Extensions</strong> and turn on DivPic.</li>
-    <li>Allow DivPic on the websites you want to capture (or on all websites).</li>
-    <li>Click the DivPic button in the Safari toolbar, or press <strong>Shift-Command-E</strong>.</li>
-  </ol>
+  <!-- Browser strip: efficient.app's top-10 browsers (2026) that can install DivPic, minus SigmaOS (WebKit, no extension store), plus Opera and Vivaldi. Safari is still in App Store review. -->
+  <div class="browser-strip">
+    <p class="strip-label">Works in Chrome, Firefox and the browsers built on them</p>
+    <div class="strip-viewport">
+      <ul class="strip-track" aria-label="Supported browsers"><li title="Dia"><img src="images/browsers/dia.svg" alt="Dia" width="44" height="44"></li><li title="Safari"><img src="images/browsers/safari.svg" alt="Safari" width="44" height="44"></li><li title="Chrome"><img src="images/browsers/chrome.svg" alt="Chrome" width="44" height="44"></li><li title="Arc"><img src="images/browsers/arc.svg" alt="Arc" width="44" height="44"></li><li title="Brave"><img src="images/browsers/brave.svg" alt="Brave" width="44" height="44"></li><li title="Comet"><img src="images/browsers/comet.png" alt="Comet" width="44" height="44"></li><li title="Zen"><img src="images/browsers/zen.webp" alt="Zen" width="44" height="44"></li><li title="Firefox"><img src="images/browsers/firefox.svg" alt="Firefox" width="44" height="44"></li><li title="Edge"><img src="images/browsers/edge.svg" alt="Edge" width="44" height="44"></li><li title="Opera"><img src="images/browsers/opera.svg" alt="Opera" width="44" height="44"></li><li title="Vivaldi"><img src="images/browsers/vivaldi.svg" alt="Vivaldi" width="44" height="44"></li><li aria-hidden="true" title="Dia"><img src="images/browsers/dia.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Safari"><img src="images/browsers/safari.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Chrome"><img src="images/browsers/chrome.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Arc"><img src="images/browsers/arc.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Brave"><img src="images/browsers/brave.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Comet"><img src="images/browsers/comet.png" alt="" width="44" height="44"></li><li aria-hidden="true" title="Zen"><img src="images/browsers/zen.webp" alt="" width="44" height="44"></li><li aria-hidden="true" title="Firefox"><img src="images/browsers/firefox.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Edge"><img src="images/browsers/edge.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Opera"><img src="images/browsers/opera.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Vivaldi"><img src="images/browsers/vivaldi.svg" alt="" width="44" height="44"></li></ul>
+      <ul class="strip-track" aria-hidden="true"><li aria-hidden="true" title="Dia"><img src="images/browsers/dia.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Safari"><img src="images/browsers/safari.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Chrome"><img src="images/browsers/chrome.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Arc"><img src="images/browsers/arc.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Brave"><img src="images/browsers/brave.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Comet"><img src="images/browsers/comet.png" alt="" width="44" height="44"></li><li aria-hidden="true" title="Zen"><img src="images/browsers/zen.webp" alt="" width="44" height="44"></li><li aria-hidden="true" title="Firefox"><img src="images/browsers/firefox.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Edge"><img src="images/browsers/edge.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Opera"><img src="images/browsers/opera.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Vivaldi"><img src="images/browsers/vivaldi.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Dia"><img src="images/browsers/dia.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Safari"><img src="images/browsers/safari.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Chrome"><img src="images/browsers/chrome.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Arc"><img src="images/browsers/arc.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Brave"><img src="images/browsers/brave.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Comet"><img src="images/browsers/comet.png" alt="" width="44" height="44"></li><li aria-hidden="true" title="Zen"><img src="images/browsers/zen.webp" alt="" width="44" height="44"></li><li aria-hidden="true" title="Firefox"><img src="images/browsers/firefox.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Edge"><img src="images/browsers/edge.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Opera"><img src="images/browsers/opera.svg" alt="" width="44" height="44"></li><li aria-hidden="true" title="Vivaldi"><img src="images/browsers/vivaldi.svg" alt="" width="44" height="44"></li></ul>
+    </div>
+  </div>
 
-  <h2>Common questions</h2>
-  <h3>The DivPic button does nothing</h3>
-  <p>Reload the page. Pages that were open before DivPic was turned on don't have it yet. Also check that DivPic is allowed on that website in Safari Settings → Websites → DivPic.</p>
-  <h3>Do I need an account?</h3>
-  <p>No. Capturing, saving and copying work without one. Only Figma mode asks you to sign in with Google.</p>
-  <h3>Are my screenshots uploaded?</h3>
-  <p>No. Screenshots are made on your device and never leave it. See the <a href="privacy.html">privacy policy</a>.</p>
+  <!-- Output modes -->
+  <section id="modes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">One click, three outputs</div>
+        <h2>Pick it. Then pick where it goes.</h2>
+        <p>Same selection, three destinations. Switch modes from the toolbar without starting over.</p>
+      </div>
+      <div class="modes">
+        <article class="mode png">
+          <span class="tag">.png</span>
+          <div class="art" aria-hidden="true"><div class="art-png"><b></b><b></b><b></b><b style="width:70%"></b><em>2×</em></div></div>
+          <h3>Pixel-perfect screenshots</h3>
+          <p>Cropped to the exact element, sharp on retina, saved or copied to your clipboard.</p>
+        </article>
+        <article class="mode svg">
+          <span class="tag">.svg</span>
+          <div class="art" aria-hidden="true">
+            <svg class="art-svg" viewBox="0 0 170 120">
+              <rect x="8" y="10" width="154" height="100" rx="14"/>
+              <path d="M8 44 C 60 20, 100 80, 162 44"/>
+              <circle class="node" cx="8" cy="44" r="5"/><circle class="node" cx="162" cy="44" r="5"/>
+              <circle class="node" cx="60" cy="20" r="4"/><circle class="node" cx="100" cy="80" r="4"/>
+              <path d="M8 44 L60 20 M162 44 L100 80" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+          <h3>Vectors that scale</h3>
+          <p>Export the element as SVG for decks, docs and anything that needs to stay crisp at any size.</p>
+        </article>
+        <article class="mode fig">
+          <span class="tag">⌘V in Figma</span>
+          <div class="art" aria-hidden="true">
+            <div class="art-fig">
+              <div><small>#</small>Card</div>
+              <div class="d1"><small>#</small>Header</div>
+              <div class="d2 on"><small>T</small>Title</div>
+              <div class="d2"><small>◻</small>Avatar</div>
+              <div class="d1"><small>#</small>Chart</div>
+            </div>
+          </div>
+          <h3>Editable Figma layers</h3>
+          <p>Copy, switch to Figma, paste. Frames, text and images arrive as real layers, not a flat picture.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <h2>Contact</h2>
-  <p>Questions, bugs or ideas: <a href="mailto:ragulsundaram15@gmail.com">ragulsundaram15@gmail.com</a></p>
+  <!-- How it works -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head center">
+        <div class="kicker">How it works</div>
+        <h2>Three steps. About five seconds.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Open the toolbar</h3>
+          <p>Click the DivPic icon or press <kbd>⌘ ⇧ E</kbd> (<kbd>Ctrl ⇧ E</kbd> on Windows). A small toolbar floats over the page.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Point and click</h3>
+          <p>Hover to highlight any element, then click it. Or hit <strong>Full page</strong> to take everything in one go.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Save, copy or paste</h3>
+          <p>Download a PNG or SVG, copy to the clipboard, or paste straight into a Figma file.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer><a href="privacy.html">Privacy policy</a> · © 2026 Ragul Sundaram</footer>
+  <!-- Figma mode -->
+  <section id="figma">
+    <div class="wrap">
+      <div class="panel violet">
+        <div>
+          <div class="kicker">Figma mode</div>
+          <h2>From live site to layers you can edit.</h2>
+          <p class="lede">Stop rebuilding UI by hand from screenshots. DivPic reads the page's real structure and styles, so what lands in Figma is something you can work with.</p>
+          <ul class="ticks">
+            <li>Nested frames that follow the page's own structure</li>
+            <li>Live text with its font, size and colour</li>
+            <li>Flex and grid layouts come through as auto layout</li>
+            <li>Images, borders, radii and shadows kept intact</li>
+          </ul>
+        </div>
+        <div class="layers" aria-hidden="true">
+          <header><span>Layers</span><span>Pasted from DivPic</span></header>
+          <div><small>⛶</small>Captured frame</div>
+          <div class="d1"><small>#</small>Header</div>
+          <div class="d2"><small>▣</small>Logo</div>
+          <div class="d2"><small>#</small>Nav</div>
+          <div class="d1"><small>#</small>Hero</div>
+          <div class="d2 on"><small>T</small>Heading</div>
+          <div class="d2"><small>T</small>Paragraph</div>
+          <div class="d2"><small>#</small>Button</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style demo -->
+  <section id="style">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Make it presentable</div>
+        <h2>Screenshots that look finished.</h2>
+        <p>Add a background, padding, rounded corners and a soft shadow before you save. Keep the combos you like as presets.</p>
+      </div>
+      <div class="style-demo">
+        <div class="controls">
+          <h3>Try it</h3>
+          <p>These are the same controls you get in DivPic's settings.</p>
+          <div class="ctl">
+            <label>Background</label>
+            <div class="swatches" id="bg">
+              <button type="button" class="none" data-bg="transparent" aria-label="Transparent" aria-pressed="false"></button>
+              <button type="button" data-bg="#ffffff" style="background:#fff" aria-label="White" aria-pressed="false"></button>
+              <button type="button" data-bg="#3b82f6" style="background:#3b82f6" aria-label="Blue" aria-pressed="true"></button>
+              <button type="button" data-bg="#fbbf24" style="background:#fbbf24" aria-label="Yellow" aria-pressed="false"></button>
+              <button type="button" data-bg="#22c55e" style="background:#22c55e" aria-label="Green" aria-pressed="false"></button>
+              <button type="button" data-bg="#0e0e10" style="background:#0e0e10" aria-label="Black" aria-pressed="false"></button>
+            </div>
+          </div>
+          <div class="ctl"><label for="pad">Padding <output for="pad" id="pad-o">40px</output></label><input type="range" id="pad" min="0" max="80" value="40"></div>
+          <div class="ctl"><label for="rad">Corner radius <output for="rad" id="rad-o">20px</output></label><input type="range" id="rad" min="0" max="48" value="20"></div>
+          <div class="ctl"><label for="shd">Shadow <output for="shd" id="shd-o">30%</output></label><input type="range" id="shd" min="0" max="80" value="30"></div>
+        </div>
+        <div class="preview-area">
+          <div class="shot" id="shot">
+            <div class="card">
+              <div class="row">
+                <div class="av"><b></b><b></b><b></b><b></b></div>
+                <div class="lines"><div class="sk"></div><div class="sk"></div></div>
+              </div>
+              <div class="chart">
+                <b style="height:40%;background:var(--tile-blue)"></b>
+                <b style="height:70%;background:var(--tile-yellow)"></b>
+                <b style="height:55%;background:var(--tile-red)"></b>
+                <b style="height:90%;background:var(--tile-green)"></b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy-band">
+    <div class="wrap">
+      <div class="panel dark">
+        <div>
+          <div class="kicker" style="color:#a8abb4">Private by default</div>
+          <h2>Your captures never leave your machine.</h2>
+          <p class="lede">Screenshots are made right in your browser. No servers, no uploads, no account to start.</p>
+          <ul class="ticks">
+            <li>PNG and SVG work with no sign-in at all</li>
+            <li>Figma mode asks for a Google sign-in, nothing more</li>
+            <li>Delete your account any time from settings</li>
+          </ul>
+          <p style="margin-top:28px"><a href="privacy.html" style="color:#f3f3f5">Read the privacy policy →</a></p>
+        </div>
+        <div class="lock" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.3"/></svg>
+          <em>On-device</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get it. Safari: swap the soon-card for a link once the App Store listing is live. -->
+  <section id="get">
+    <div class="wrap">
+      <div class="sec-head center">
+        <div class="kicker">Get DivPic</div>
+        <h2>Works where you browse.</h2>
+      </div>
+      <div class="browsers">
+        <a href="https://chromewebstore.google.com/detail/divpic/lpdabdkfnmackfinabbgelafogmahjni" target="_blank" rel="noopener" data-store="chrome">
+          <span class="head"><img class="ico" src="images/browsers/chrome.svg" alt="" width="32" height="32"><strong>Chrome</strong></span>
+          <span>Also Arc, Edge, Brave and other Chromium browsers</span>
+          <span class="go">Chrome Web Store →</span>
+        </a>
+        <a href="https://addons.mozilla.org/firefox/addon/divpic/" target="_blank" rel="noopener" data-store="firefox">
+          <span class="head"><img class="ico" src="images/browsers/firefox.svg" alt="" width="32" height="32"><strong>Firefox</strong></span>
+          <span>Desktop Firefox</span>
+          <span class="go">Firefox Add-ons →</span>
+        </a>
+        <div class="soon-card" data-store="safari">
+          <span class="head"><img class="ico" src="images/browsers/safari.svg" alt="" width="32" height="32"><strong>Safari</strong></span>
+          <span>macOS 13 or later</span>
+          <span class="go soon">Coming soon to the Mac App Store</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / support -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head center">
+        <div class="kicker">Help</div>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="faq faq-list">
+        <details>
+          <summary>How do I set it up in Safari?</summary>
+          <div class="answer"><ol>
+            <li>Install DivPic from the Mac App Store and open the DivPic app once.</li>
+            <li>In Safari, open <strong>Settings → Extensions</strong> and turn on DivPic.</li>
+            <li>Allow DivPic on the websites you want to capture, or on all websites.</li>
+            <li>Click the DivPic button in the Safari toolbar, or press <kbd>⌘ ⇧ E</kbd>.</li>
+          </ol></div>
+        </details>
+        <details>
+          <summary>The DivPic button does nothing</summary>
+          <div class="answer"><p>Reload the page. Tabs that were open before DivPic was installed or turned on don't have it yet. On Safari, also check that DivPic is allowed on that site under Settings → Websites → DivPic.</p></div>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <div class="answer"><p>No. Capturing, saving and copying all work without one. Only Figma mode asks you to sign in with Google.</p></div>
+        </details>
+        <details>
+          <summary>Do I need a Figma plugin?</summary>
+          <div class="answer"><p>No. DivPic puts the capture on your clipboard. Open any Figma file and paste.</p></div>
+        </details>
+        <details>
+          <summary>Can I capture a whole page, not just one element?</summary>
+          <div class="answer"><p>Yes. Pick <strong>Full page</strong> in the toolbar instead of selecting an element.</p></div>
+        </details>
+        <details>
+          <summary>Are my screenshots uploaded anywhere?</summary>
+          <div class="answer"><p>No. They're made on your device and stay there. The <a href="privacy.html">privacy policy</a> covers every permission DivPic asks for and why.</p></div>
+        </details>
+        <details>
+          <summary>Something looks off in Figma. What now?</summary>
+          <div class="answer"><p>Some pages use effects Figma can't represent exactly. Send the page URL and a screenshot to <a href="mailto:ragulsundaram15@gmail.com">ragulsundaram15@gmail.com</a> and it'll get looked at.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closer -->
+  <div class="closer">
+    <div class="wrap">
+      <div class="box">
+        <span class="blob y"></span><span class="blob r"></span><span class="blob g"></span>
+        <h2>Stop cropping. Start clicking.</h2>
+        <p>Free, private, and ready in under a minute.</p>
+        <div class="cta-row">
+          <a class="btn solid" href="#get">Get DivPic</a>
+          <a class="btn" href="mailto:ragulsundaram15@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="icon.png" alt="">DivPic</a>
+    <span>© 2026 Ragul Sundaram</span>
+    <nav aria-label="Footer">
+      <a href="blog/index.html">Blog</a>
+      <a href="#faq">Help</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:ragulsundaram15@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav border once the page scrolls.
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Style demo: mirrors DivPic's background / padding / radius / shadow settings.
+  const shot = document.getElementById('shot');
+  const state = { bg: '#3b82f6', pad: 40, rad: 20, shd: 30 };
+  function render() {
+    shot.style.background = state.bg;
+    shot.style.padding = state.pad + 'px';
+    shot.style.borderRadius = state.rad + 'px';
+    const a = state.shd / 100;
+    shot.style.boxShadow = a ? `0 ${12 + a * 20}px ${30 + a * 40}px -10px rgba(14,14,16,${a})` : 'none';
+  }
+  [['pad', 'px'], ['rad', 'px'], ['shd', '%']].forEach(([id, unit]) => {
+    const input = document.getElementById(id);
+    const out = document.getElementById(id + '-o');
+    input.addEventListener('input', () => {
+      state[id] = Number(input.value);
+      out.textContent = input.value + unit;
+      render();
+    });
+  });
+  document.querySelectorAll('#bg button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#bg button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      state.bg = btn.dataset.bg;
+      render();
+    });
+  });
+  render();
+
+  // Hero demo: hover any block on the mock page to highlight it, click to select it,
+  // the same way DivPic picks elements on a real page.
+  const page = document.getElementById('demo-page');
+  const hoverBox = page.querySelector('.hover-box');
+  const sel = page.querySelector('.sel');
+  const size = sel.querySelector('.size');
+  const stage = page.closest('.stage');
+  const overlays = new Set([hoverBox, sel]);
+  const pick = (x, y) => {
+    let el = document.elementFromPoint(x, y);
+    while (el && el !== page && (overlays.has(el) || el.closest('.cursor, .demo-badge, .sel'))) el = el.parentElement;
+    return el && page.contains(el) && el !== page ? el : null;
+  };
+  const place = (box, el) => {
+    const p = page.getBoundingClientRect(), r = el.getBoundingClientRect();
+    Object.assign(box.style, { left: r.left - p.left + 'px', top: r.top - p.top + 'px', width: r.width + 'px', height: r.height + 'px' });
+    return r;
+  };
+  let selected = page.querySelector('[data-initial]');
+  const select = (el, byUser) => {
+    selected = el;
+    const r = place(sel, el);
+    size.textContent = Math.round(r.width) + ' × ' + Math.round(r.height);
+    if (byUser) stage.classList.add('picked');
+  };
+  page.addEventListener('pointermove', (e) => {
+    const el = pick(e.clientX, e.clientY);
+    if (!el || el === selected) { hoverBox.hidden = true; return; }
+    hoverBox.hidden = false;
+    place(hoverBox, el);
+  });
+  page.addEventListener('pointerleave', () => { hoverBox.hidden = true; });
+  page.addEventListener('click', (e) => {
+    const el = pick(e.clientX, e.clientY);
+    if (el) { select(el, true); hoverBox.hidden = true; }
+  });
+  // Keep the selection glued to its element when the layout changes.
+  new ResizeObserver(() => select(selected)).observe(page);
+
+  // Guided tour: until the visitor touches the demo, the "You" cursor hovers and
+  // clicks a few elements so it's obvious the page is interactive.
+  const you = stage.querySelector('.cursor.you');
+  const stops = ['.app-kpi:nth-child(1)', '.app-search', '.app-list', '.app-kpi:nth-child(2)', '.app-btn', '.app-chart']
+    .map((q) => page.querySelector(q));
+  let tour = null, step = 0, idle = null;
+  const visible = (el) => el && el.getClientRects().length > 0;
+  const tourStep = () => {
+    const targets = stops.filter(visible);
+    const el = targets[step++ % targets.length];
+    const s = stage.getBoundingClientRect(), r = el.getBoundingClientRect();
+    you.style.left = r.left - s.left + r.width * 0.55 + 'px';
+    you.style.top = r.top - s.top + r.height * 0.55 + 'px';
+    setTimeout(() => { if (!tour) return; hoverBox.hidden = false; place(hoverBox, el); }, 700);
+    setTimeout(() => { if (!tour) return; hoverBox.hidden = true; select(el); you.classList.add('clicking'); setTimeout(() => you.classList.remove('clicking'), 250); }, 1500);
+  };
+  const startTour = () => { if (tour) return; stage.classList.add('touring'); tourStep(); tour = setInterval(tourStep, 2600); };
+  const stopTour = () => { clearInterval(tour); tour = null; clearTimeout(idle); stage.classList.remove('touring'); hoverBox.hidden = true; };
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    page.addEventListener('pointerenter', stopTour);
+    page.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') stage.classList.add('user-in'); });
+    page.addEventListener('pointerleave', () => stage.classList.remove('user-in'));
+    page.addEventListener('pointerdown', stopTour);
+    page.addEventListener('pointerleave', () => { idle = setTimeout(startTour, 5000); });
+    // Start once the demo scrolls into view.
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) startTour(); else stopTour(); }, { threshold: 0.4 }).observe(page);
+  }
+</script>
+<script src="get-menu.js"></script>
 </body>
 </html>

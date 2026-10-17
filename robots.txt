@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ragulsundaram.github.io/divpic-site/sitemap.xml

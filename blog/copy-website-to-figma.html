@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to copy any website into Figma as editable layers | DivPic</title>
+  <meta name="description" content="Turn any element or full web page into editable Figma frames: text, auto layout, images and all. A step-by-step guide to DivPic's Figma mode.">
+  <link rel="canonical" href="https://ragulsundaram.github.io/divpic-site/blog/copy-website-to-figma.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to copy any website into Figma as editable layers">
+  <meta property="og:description" content="Turn any element or full web page into editable Figma frames with DivPic's Figma mode.">
+  <meta property="og:image" content="https://ragulsundaram.github.io/divpic-site/blog/images/figma-layers.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "How to copy any website into Figma as editable layers",
+        "description": "Turn any element or full web page into editable Figma frames with DivPic's Figma mode.",
+        "image": "https://ragulsundaram.github.io/divpic-site/blog/images/figma-layers.jpg",
+        "datePublished": "2026-10-17",
+        "dateModified": "2026-10-17",
+        "author": { "@type": "Person", "name": "Ragul Sundaram" },
+        "publisher": { "@type": "Organization", "name": "DivPic", "logo": { "@type": "ImageObject", "url": "https://ragulsundaram.github.io/divpic-site/icon.png" } },
+        "mainEntityOfPage": "https://ragulsundaram.github.io/divpic-site/blog/copy-website-to-figma.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://ragulsundaram.github.io/divpic-site/blog/" },
+          { "@type": "ListItem", "position": 2, "name": "Figma mode", "item": "https://ragulsundaram.github.io/divpic-site/blog/#figma-mode" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Do I need a Figma plugin?", "acceptedAnswer": { "@type": "Answer", "text": "No. DivPic writes the capture to your clipboard in a format Figma understands. Open any Figma file and paste." } },
+          { "@type": "Question", "name": "Why does Figma mode ask me to sign in?", "acceptedAnswer": { "@type": "Answer", "text": "Figma mode is tied to a DivPic account, which uses Google sign-in. PNG and SVG screenshots work without signing in." } },
+          { "@type": "Question", "name": "Can I capture pages that need a login?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. DivPic reads the page as it appears in your own browser tab, so anything you can see while signed in can be captured." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../icon.png" alt="">DivPic</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="../index.html#modes">What it does</a>
+      <a href="../index.html#figma">Figma mode</a>
+      <a href="index.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">Help</a>
+    </nav>
+    <div class="get-menu">
+      <button class="btn solid sm" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu-list">Get DivPic<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="get-menu-list" id="get-menu-list" role="menu" hidden>
+        <a role="menuitem" href="https://chromewebstore.google.com/detail/divpic/lpdabdkfnmackfinabbgelafogmahjni" target="_blank" rel="noopener"><img src="../images/browsers/chrome.svg" alt="" width="24" height="24"><span><strong>Chrome</strong><small>Also Arc, Edge and Brave</small></span></a>
+        <a role="menuitem" href="https://addons.mozilla.org/firefox/addon/divpic/" target="_blank" rel="noopener"><img src="../images/browsers/firefox.svg" alt="" width="24" height="24"><span><strong>Firefox</strong><small>Firefox Add-ons</small></span></a>
+        <div class="soon" aria-disabled="true"><img src="../images/browsers/safari.svg" alt="" width="24" height="24"><span><strong>Safari</strong><small>Coming soon to the Mac App Store</small></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-shell">
+  <main class="article">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Blog</a><span class="sep">→</span><a class="here" href="index.html#figma-mode">Figma mode</a>
+    </nav>
+    <h1>How to copy any website into Figma as editable layers</h1>
+    <div class="byline"><span>Updated October 17, 2026</span><span data-read-time></span></div>
+
+    <details class="toc-mobile"><summary>On this page</summary><ol></ol></details>
+
+    <div class="prose">
+      <p class="lede">Rebuilding a live page in Figma by hand eats an afternoon. DivPic's Figma mode reads the page you're looking at and hands Figma real frames, text and images, so you start from the actual UI instead of a flat screenshot.</p>
+
+      <div class="callout note">Figma mode is available on Chrome, Firefox and Safari. It needs a free DivPic account (Google sign-in). Plain PNG and SVG screenshots don't.</div>
+
+      <div class="requires">
+        <div class="title">What you need</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>DivPic installed in Chrome, Firefox or Safari</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>A Google account to sign in to DivPic</li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Edit access to the Figma file you're pasting into</li>
+        </ul>
+      </div>
+
+      <h2 id="turn-on">Turn on Figma mode</h2>
+      <ol class="steps-list">
+        <li>Open the page you want to capture and click the DivPic icon, or press <code>⌘ ⇧ E</code> (<code>Ctrl ⇧ E</code> on Windows and Linux).</li>
+        <li>In the floating toolbar, flip the <strong>Figma</strong> switch on.</li>
+        <li>The first time, DivPic asks you to <strong>Sign in with Google</strong>. After that it remembers you.</li>
+      </ol>
+
+      <figure class="shot-block">
+        <button class="frame" type="button" aria-label="View larger image">
+          <img src="images/screenshot-paste-figma.jpg" alt="The DivPic toolbar with the Figma switch on and Element and Full Page buttons" width="1280" height="800" loading="lazy">
+        </button>
+        <figcaption>The toolbar with Figma mode switched on.</figcaption>
+      </figure>
+
+      <h2 id="capture-element">Capture one element</h2>
+      <p>Use this when you only need a piece of the page: a pricing card, a navbar, a form.</p>
+      <ol class="steps-list">
+        <li>Click <strong>Element</strong> in the toolbar.</li>
+        <li>Move your pointer over the page. DivPic outlines whatever is under it.</li>
+        <li>Not quite the right box? Press <code>↑</code> to jump to the parent element or <code>↓</code> to go into a child.</li>
+        <li>Click to capture. DivPic puts the result on your clipboard.</li>
+      </ol>
+      <p>Changed your mind? Press <code>Esc</code> to cancel without capturing anything.</p>
+
+      <h2 id="capture-page">Capture a full page</h2>
+      <p>Click <strong>Full page</strong> instead of Element. DivPic scrolls through the page first so lazy-loaded images and sections are there when it reads the layout, then returns you to the top.</p>
+
+      <figure class="shot-block">
+        <button class="frame" type="button" aria-label="View larger image">
+          <img src="images/full-page-no-plugin.jpg" alt="A web page being captured in full, with a dashed selection around the whole page" width="1280" height="800" loading="lazy">
+        </button>
+        <figcaption>Full page capture scrolls the page so nothing below the fold is missed.</figcaption>
+      </figure>
+
+      <h2 id="paste">Paste into Figma</h2>
+      <ol class="steps-list">
+        <li>Open any Figma design file.</li>
+        <li>Click on the canvas and press <code>⌘ V</code> (<code>Ctrl V</code> on Windows).</li>
+        <li>The capture lands as a frame with the page's layers nested inside it.</li>
+      </ol>
+
+      <div class="callout tip">
+        <p><strong>Tip:</strong> once it's in Figma, you can:</p>
+        <ul>
+          <li>Edit any text layer directly, since it's live text, not pixels</li>
+          <li>Swap images by replacing the image fill</li>
+          <li>Resize a frame and watch the auto layout reflow</li>
+        </ul>
+      </div>
+
+      <figure class="shot-block">
+        <button class="frame" type="button" aria-label="View larger image">
+          <img src="images/figma-layers.jpg" alt="Figma's layers panel showing a captured frame with nested Header, Nav, Hero, Heading and Paragraph layers" width="1280" height="800" loading="lazy">
+        </button>
+        <figcaption>A pasted capture keeps the page's structure as nested, named layers.</figcaption>
+      </figure>
+
+      <h2 id="what-comes-through">What comes through, and how</h2>
+      <p>DivPic reads the page's computed styles and layout. Here's how the common building blocks of a web page show up in Figma.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">On the web page</th><th scope="col">In Figma</th><th scope="col">Good to know</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Flex and grid containers</th><td>Frames with auto layout</td><td>Figma rebuilds the layout from the page's flex and grid settings.</td></tr>
+            <tr><th scope="row">Text</th><td>Text layers</td><td>Font, size, weight, line height and colour are kept. Install the font in Figma to avoid substitutes.</td></tr>
+            <tr><th scope="row">Images</th><td>Image fills</td><td>Images from other domains are fetched for you so they don't come out blank.</td></tr>
+            <tr><th scope="row">Canvas elements</th><td>Images</td><td>Charts drawn on a canvas arrive as a picture of the chart.</td></tr>
+            <tr><th scope="row">Borders, radii, shadows</th><td>Strokes, corner radius, effects</td><td>Box shadows become drop shadows.</td></tr>
+            <tr><th scope="row">Sticky headers and sidebars</th><td>Regular layers in the flow</td><td>Figma has no sticky positioning, so they sit where they'd normally be.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="tips">Tips for cleaner captures</h2>
+      <ul>
+        <li><strong>Capture the smallest thing you need.</strong> A single card gives you a tidier layer tree than a whole page.</li>
+        <li><strong>Close cookie banners and pop-ups first.</strong> DivPic captures what's on the page, overlays included.</li>
+        <li><strong>Resize the window first</strong> if you want the mobile or tablet layout. DivPic captures the layout at the current width.</li>
+      </ul>
+
+      <div class="callout warn">Only capture sites you have the right to use. Copying someone else's design into Figma for reference is common practice, but shipping it as your own isn't.</div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Do I need a Figma plugin?</summary>
+          <div class="answer"><p>No. DivPic writes the capture to your clipboard in a format Figma understands. Open any Figma file and paste.</p></div>
+        </details>
+        <details>
+          <summary>Why does Figma mode ask me to sign in?</summary>
+          <div class="answer"><p>Figma mode is tied to a DivPic account, which uses Google sign-in. PNG and SVG screenshots work without signing in. You can delete your account at any time from DivPic's settings.</p></div>
+        </details>
+        <details>
+          <summary>Can I capture pages that need a login?</summary>
+          <div class="answer"><p>Yes. DivPic reads the page as it appears in your own browser tab, so anything you can see while signed in can be captured. Nothing is uploaded to a server along the way.</p></div>
+        </details>
+        <details>
+          <summary>Something looks off after pasting. What can I do?</summary>
+          <div class="answer"><p>Some effects, like complex blend modes or unusual CSS tricks, have no exact match in Figma. Send the page URL and a screenshot to <a href="mailto:ragulsundaram15@gmail.com">ragulsundaram15@gmail.com</a> and it'll get looked at.</p></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="helpful">
+      <p>Was this article helpful?</p>
+      <button class="btn" type="button" data-vote="yes" aria-pressed="false">Yes</button>
+      <button class="btn" type="button" data-vote="no" aria-pressed="false">No</button>
+      <p class="thanks" hidden aria-live="polite"></p>
+    </div>
+
+    <section class="related" style="padding:0">
+      <h2>Keep reading</h2>
+      <ul class="pills">
+        <li><a href="screenshot-html-element.html">How to screenshot a single element on a web page</a></li>
+        <li><a href="full-page-screenshot.html">How to take a full-page screenshot, lazy-loaded parts included</a></li>
+      </ul>
+    </section>
+  </main>
+  <aside></aside>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../icon.png" alt="">DivPic</a>
+    <span>© 2026 Ragul Sundaram</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Blog</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="mailto:ragulsundaram15@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+<script src="blog.js"></script>
+<script src="../get-menu.js"></script>
+</body>
+</html>

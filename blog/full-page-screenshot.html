@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to take a full-page screenshot, lazy-loaded parts included | DivPic</title>
+  <meta name="description" content="Capture an entire web page top to bottom in one image, including sections that only load as you scroll. Works in Chrome, Firefox and Safari.">
+  <link rel="canonical" href="https://ragulsundaram.github.io/divpic-site/blog/full-page-screenshot.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to take a full-page screenshot, lazy-loaded parts included">
+  <meta property="og:description" content="Capture an entire web page in one image, including sections that only load as you scroll.">
+  <meta property="og:image" content="https://ragulsundaram.github.io/divpic-site/blog/images/full-page-no-plugin.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "How to take a full-page screenshot, lazy-loaded parts included",
+        "description": "Capture an entire web page in one image, including sections that only load as you scroll.",
+        "image": "https://ragulsundaram.github.io/divpic-site/blog/images/full-page-no-plugin.jpg",
+        "datePublished": "2026-10-17",
+        "dateModified": "2026-10-17",
+        "author": { "@type": "Person", "name": "Ragul Sundaram" },
+        "publisher": { "@type": "Organization", "name": "DivPic", "logo": { "@type": "ImageObject", "url": "https://ragulsundaram.github.io/divpic-site/icon.png" } },
+        "mainEntityOfPage": "https://ragulsundaram.github.io/divpic-site/blog/full-page-screenshot.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://ragulsundaram.github.io/divpic-site/blog/" },
+          { "@type": "ListItem", "position": 2, "name": "Screenshots", "item": "https://ragulsundaram.github.io/divpic-site/blog/#screenshots" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Why is the bottom of a very long page cut off?", "acceptedAnswer": { "@type": "Answer", "text": "Browsers can't create images taller than about 32,000 pixels. For pages longer than that, DivPic trims the bottom instead of failing. Capture the lower part as a separate element." } },
+          { "@type": "Question", "name": "Does the page jump around while it captures?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, briefly. DivPic scrolls the page to photograph each part. Leave the tab alone until it finishes." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../icon.png" alt="">DivPic</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="../index.html#modes">What it does</a>
+      <a href="../index.html#figma">Figma mode</a>
+      <a href="index.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">Help</a>
+    </nav>
+    <div class="get-menu">
+      <button class="btn solid sm" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu-list">Get DivPic<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="get-menu-list" id="get-menu-list" role="menu" hidden>
+        <a role="menuitem" href="https://chromewebstore.google.com/detail/divpic/lpdabdkfnmackfinabbgelafogmahjni" target="_blank" rel="noopener"><img src="../images/browsers/chrome.svg" alt="" width="24" height="24"><span><strong>Chrome</strong><small>Also Arc, Edge and Brave</small></span></a>
+        <a role="menuitem" href="https://addons.mozilla.org/firefox/addon/divpic/" target="_blank" rel="noopener"><img src="../images/browsers/firefox.svg" alt="" width="24" height="24"><span><strong>Firefox</strong><small>Firefox Add-ons</small></span></a>
+        <div class="soon" aria-disabled="true"><img src="../images/browsers/safari.svg" alt="" width="24" height="24"><span><strong>Safari</strong><small>Coming soon to the Mac App Store</small></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-shell">
+  <main class="article">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Blog</a><span class="sep">→</span><a class="here" href="index.html#screenshots">Screenshots</a>
+    </nav>
+    <h1>How to take a full-page screenshot, lazy-loaded parts included</h1>
+    <div class="byline"><span>Updated October 17, 2026</span><span data-read-time></span></div>
+
+    <details class="toc-mobile"><summary>On this page</summary><ol></ol></details>
+
+    <div class="prose">
+      <p class="lede">A browser can only photograph what's on screen. Full-page tools get around that by scrolling and stitching, and the hard part is everything that goes wrong along the way: images that haven't loaded yet, headers that follow you down the page, and pages too tall for one image.</p>
+
+      <h2 id="how-to">Capture the whole page</h2>
+      <ol class="steps-list">
+        <li>Open the page and press <code>⌘ ⇧ E</code> (<code>Ctrl ⇧ E</code> on Windows and Linux), or click the DivPic icon.</li>
+        <li>Pick <strong>PNG</strong> in the toolbar, then click <strong>Full page</strong>.</li>
+        <li>Leave the tab alone for a moment while DivPic scrolls through the page.</li>
+        <li>The finished image is saved or copied, depending on your setting.</li>
+      </ol>
+
+      <figure class="shot-block">
+        <button class="frame" type="button" aria-label="View larger image">
+          <img src="images/full-page-no-plugin.jpg" alt="A whole web page outlined for capture, with an auto-scroll badge at the top" width="1280" height="800" loading="lazy">
+        </button>
+        <figcaption>DivPic scrolls the page itself, so you don't have to.</figcaption>
+      </figure>
+
+      <h2 id="how-it-works">What DivPic does behind the scenes</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Problem</th><th scope="col">What DivPic does</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Images that load as you scroll</th><td>Scrolls through the page first so lazy-loaded images and sections are there before capturing.</td></tr>
+            <tr><th scope="row">Content below the fold</th><td>Photographs the page one screen at a time and stitches the pieces into a single image.</td></tr>
+            <tr><th scope="row">Sticky headers and chat bubbles</th><td>Takes each piece from the part of the screen they don't cover, so they don't repeat down the image.</td></tr>
+            <tr><th scope="row">Panels that scroll on their own</th><td>Scrolls the panel itself as well as the page, so its hidden content is included.</td></tr>
+            <tr><th scope="row">DivPic's own toolbar</th><td>Kept out of the image.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout note">Elements work the same way. If you select a single element that's taller than your screen, DivPic scrolls and stitches just that element.</div>
+
+      <h2 id="limits">Very long pages</h2>
+      <p>Browsers can't create an image taller than roughly 32,000 pixels. For pages longer than that, DivPic trims the bottom rather than giving you a blank or broken file.</p>
+      <div class="callout tip">
+        <p><strong>Tip:</strong> for an extremely long page:</p>
+        <ul>
+          <li>Capture it in parts by selecting large sections as elements</li>
+          <li>Or use Figma mode, which reads the layout instead of taking pictures</li>
+        </ul>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Why is the bottom of a very long page cut off?</summary>
+          <div class="answer"><p>Browsers can't create images taller than about 32,000 pixels. For pages longer than that, DivPic trims the bottom instead of failing. Capture the lower part as a separate element.</p></div>
+        </details>
+        <details>
+          <summary>Does the page jump around while it captures?</summary>
+          <div class="answer"><p>Yes, briefly. DivPic scrolls the page to photograph each part. Leave the tab alone until it finishes.</p></div>
+        </details>
+        <details>
+          <summary>Can I send a full page to Figma instead?</summary>
+          <div class="answer"><p>Yes. Turn on Figma mode before clicking Full page. See <a href="copy-website-to-figma.html">copying a website into Figma</a>.</p></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="helpful">
+      <p>Was this article helpful?</p>
+      <button class="btn" type="button" data-vote="yes" aria-pressed="false">Yes</button>
+      <button class="btn" type="button" data-vote="no" aria-pressed="false">No</button>
+      <p class="thanks" hidden aria-live="polite"></p>
+    </div>
+
+    <section class="related" style="padding:0">
+      <h2>Keep reading</h2>
+      <ul class="pills">
+        <li><a href="screenshot-html-element.html">How to screenshot a single element on a web page</a></li>
+        <li><a href="copy-website-to-figma.html">How to copy any website into Figma as editable layers</a></li>
+      </ul>
+    </section>
+  </main>
+  <aside></aside>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../icon.png" alt="">DivPic</a>
+    <span>© 2026 Ragul Sundaram</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Blog</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="mailto:ragulsundaram15@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+<script src="blog.js"></script>
+<script src="../get-menu.js"></script>
+</body>
+</html>
