@@ -91,9 +91,19 @@
   // Highlight the section being read, and show reading progress.
   const progress = document.querySelector('.toc-progress');
   const article = document.querySelector('.article');
+  // A clicked TOC link stays highlighted until the reader scrolls again by hand.
+  let pinned = -1;
+  links.forEach((a, i) => a.addEventListener('click', () => { pinned = i; }));
+  ['wheel', 'touchstart', 'keydown'].forEach((t) => window.addEventListener(t, () => { pinned = -1; }, { passive: true }));
   function spy() {
     let current = 0;
-    headings.forEach((h, i) => { if (h.getBoundingClientRect().top < 140) current = i; });
+    const line = Math.max(140, window.innerHeight * 0.3);
+    headings.forEach((h, i) => { if (h.getBoundingClientRect().top < line) current = i; });
+    // Short sections at the end never reach the line, so at the bottom pick the last heading on screen.
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      headings.forEach((h, i) => { if (h.getBoundingClientRect().top < window.innerHeight) current = i; });
+    }
+    if (pinned >= 0) current = pinned;
     links.forEach((a, i) => a.classList.toggle('active', i === current));
     if (progress && article) {
       const r = article.getBoundingClientRect();
