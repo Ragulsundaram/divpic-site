@@ -123,8 +123,8 @@ a { color: inherit; }
 .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--tile-green); }
 h1, h2, h3 { font-family: "Inter Tight", "Inter", sans-serif; letter-spacing: -0.035em; margin: 0; }
 .hero h1 {
-  font-size: clamp(48px, 9vw, 112px); line-height: .95; font-weight: 700;
-  max-width: 11ch; margin: 0 auto;
+  font-size: clamp(44px, 8vw, 96px); line-height: .95; font-weight: 700;
+  white-space: nowrap; margin: 0 auto;
 }
 .hero h1 .hl { position: relative; white-space: nowrap; }
 .hero h1 .hl::after {
@@ -297,6 +297,22 @@ h1, h2, h3 { font-family: "Inter Tight", "Inter", sans-serif; letter-spacing: -0
 .dp-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); font-size: 12.5px; font-weight: 600; border-radius: 8px; }
 .dp-btn-primary { background: linear-gradient(135deg, #6d5efc 0%, #9a6bff 100%); border-color: transparent; color: #fff; box-shadow: 0 3px 10px rgba(125,109,255,0.35); }
 .dp-iconbtn { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: rgba(243,243,246,0.6); border-radius: 6px; }
+/* Clickable: :where() keeps the button reset weaker than the toolbar's own classes */
+:where(.dp-bar) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; }
+.dp-bar button:focus-visible { outline: 2px solid #9a6bff; outline-offset: 2px; }
+.dp-brand { border-radius: 6px; }
+.dp-switch, .dp-switch::after, .dp-bar .tb, .dp-btn, .dp-iconbtn { transition: background .15s, color .15s, transform .2s var(--ease), left .2s var(--ease); }
+.dp-figma[aria-checked="true"] .dp-switch { background: #7d6dff; }
+.dp-figma[aria-checked="true"] .dp-switch::after { left: 16px; }
+.dp-figma[aria-checked="true"] .dp-figma-label { color: #f3f3f6; }
+.dp-bar .tb:not(.on):hover { color: #f3f3f6; background: rgba(255,255,255,0.06); }
+.dp-btn:hover { background: rgba(255,255,255,0.09); }
+.dp-btn-primary:hover { background: linear-gradient(135deg, #7b6dff 0%, #a77cff 100%); }
+.dp-btn:active, .dp-iconbtn:active { transform: scale(.96); }
+.dp-iconbtn:hover { color: #f3f3f6; background: rgba(255,255,255,0.08); }
+.dp-iconbtn.spin svg { transform: rotate(90deg); transition: transform .4s var(--ease); }
+/* Close collapses the bar to its logo; clicking the logo opens it again */
+.dp-bar.min > :not(.dp-grip, .dp-brand) { display: none; }
 @media (max-width: 760px) { .dp-bar { transform: translateX(-50%) scale(.72); } }
 @media (max-width: 560px) { .dp-bar { transform: translateX(-50%) scale(.5); bottom: -18px; } }
 
@@ -324,11 +340,15 @@ h1, h2, h3 { font-family: "Inter Tight", "Inter", sans-serif; letter-spacing: -0
 
 /* ---------- Sections ---------- */
 section { padding: 120px 0 0; }
-.sec-head { max-width: 760px; margin-bottom: 48px; }
+/* Only the copy is capped; headings get the full width so they hold one line */
+.sec-head { margin-bottom: 48px; }
 .sec-head.center { margin: 0 auto 56px; text-align: center; }
+.sec-head h2 { text-wrap: balance; }
+@media (min-width: 640px) { .sec-head h2 { white-space: nowrap; } }
 .kicker { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 14px; }
 h2 { font-size: clamp(38px, 6vw, 72px); line-height: 1; font-weight: 700; }
-.sec-head p { font-size: 20px; color: var(--ink-2); margin: 20px 0 0; }
+.sec-head p { font-size: 20px; color: var(--ink-2); margin: 20px 0 0; max-width: 760px; }
+.sec-head.center p { margin-inline: auto; }
 
 /* Output modes: same panel as How it works. Colour is only an accent; hovering a cell plays its mockup. */
 .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
@@ -541,37 +561,37 @@ h2 { font-size: clamp(38px, 6vw, 72px); line-height: 1; font-weight: 700; }
 .feat:nth-child(4) { --c: #e0a100; }
 .feat:nth-child(5) { --c: var(--tile-red); }
 .feat::before { content: ''; position: absolute; inset: 0; background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--c) 16%, transparent), transparent 70%); opacity: 0; transition: opacity .3s var(--ease); pointer-events: none; }
-.feat:hover::before { opacity: 1; }
+.feat.play::before { opacity: 1; }
 .feat > * { position: relative; }
 .feat h3 { font-size: 18px; letter-spacing: -0.01em; }
 .feat p { margin: 8px 0 0; font-size: 15px; color: var(--ink-2); }
 .fi { width: 48px; height: 48px; margin-bottom: 28px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--line); background: var(--soft); transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease); }
 .fi svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
 .fi svg * { transform-box: fill-box; transform-origin: center; transition: transform .35s var(--ease); }
-.feat:is(:hover, .play) .fi { background: var(--c); border-color: var(--c); color: #fff; transform: translateY(-2px); }
+.feat.play .fi { background: var(--c); border-color: var(--c); color: #fff; transform: translateY(-2px); }
 
 .fi .rays { transform-box: view-box; transform-origin: 9px 9px; }
-.feat:is(:hover, .play) .fi .rays { animation: f-burst .7s var(--ease); }
-.feat:is(:hover, .play) .fi .ptr { animation: f-tap .5s var(--ease); }
-.feat:is(:hover, .play) .fi .tl { transform: translate(-1.5px, -1.5px); }
-.feat:is(:hover, .play) .fi .tr { transform: translate(1.5px, -1.5px); }
-.feat:is(:hover, .play) .fi .br { transform: translate(1.5px, 1.5px); }
-.feat:is(:hover, .play) .fi .bl { transform: translate(-1.5px, 1.5px); }
-.feat:is(:hover, .play) .fi .scroll { animation: f-scroll .9s var(--ease); }
-.feat:is(:hover, .play) .fi .l1 { transform: translateY(-2.5px); }
-.feat:is(:hover, .play) .fi .l3 { transform: translateY(2.5px); }
+.feat.play .fi .rays { animation: f-burst .7s var(--ease); }
+.feat.play .fi .ptr { animation: f-tap .5s var(--ease); }
+.feat.play .fi .tl { transform: translate(-1.5px, -1.5px); }
+.feat.play .fi .tr { transform: translate(1.5px, -1.5px); }
+.feat.play .fi .br { transform: translate(1.5px, 1.5px); }
+.feat.play .fi .bl { transform: translate(-1.5px, 1.5px); }
+.feat.play .fi .scroll { animation: f-scroll .9s var(--ease); }
+.feat.play .fi .l1 { transform: translateY(-2.5px); }
+.feat.play .fi .l3 { transform: translateY(2.5px); }
 .fi .curve { stroke-dasharray: 1; stroke-dashoffset: 0; }
-.feat:is(:hover, .play) .fi .curve { animation: f-draw .8s var(--ease); }
-.feat:is(:hover, .play) .fi .a1, .feat:is(:hover, .play) .fi .a2 { transform: rotate(45deg) scale(.9); }
-.feat:is(:hover, .play) .fi .sun { transform: translate(1px, -2px) scale(1.2); }
-.feat:is(:hover, .play) .fi .hill { animation: f-hill .7s var(--ease); }
+.feat.play .fi .curve { animation: f-draw .8s var(--ease); }
+.feat.play .fi .a1, .feat.play .fi .a2 { transform: rotate(45deg) scale(.9); }
+.feat.play .fi .sun { transform: translate(1px, -2px) scale(1.2); }
+.feat.play .fi .hill { animation: f-hill .7s var(--ease); }
 .fi .front { fill: var(--soft); transition: transform .35s var(--ease), fill .25s var(--ease); }
-.feat:is(:hover, .play) .fi .front { fill: var(--c); animation: f-copy .7s var(--ease); }
+.feat.play .fi .front { fill: var(--c); animation: f-copy .7s var(--ease); }
 .fi .k1, .fi .k2, .fi .k3 { fill: currentColor; }
-.feat:is(:hover, .play) .fi .k1 { transform: translateX(8px); }
-.feat:is(:hover, .play) .fi .k2 { transform: translateX(-7px); }
-.feat:is(:hover, .play) .fi .k3 { transform: translateX(5px); }
-.feat:is(:hover, .play) .fi .shackle { animation: f-unlock .9s var(--ease); }
+.feat.play .fi .k1 { transform: translateX(8px); }
+.feat.play .fi .k2 { transform: translateX(-7px); }
+.feat.play .fi .k3 { transform: translateX(5px); }
+.feat.play .fi .shackle { animation: f-unlock .9s var(--ease); }
 
 @keyframes f-burst { 0% { opacity: 1; transform: scale(1); } 35% { opacity: 0; transform: scale(1.6); } 36% { opacity: 0; transform: scale(.5); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes f-tap { 0%, 100% { transform: none; } 40% { transform: translate(-1.5px, -1.5px) scale(.9); } }
@@ -711,6 +731,8 @@ footer.site a:hover { color: var(--ink); }
   .wrap { padding: 0 16px; }
   .nav .wrap { gap: 12px; }
   .hero { padding-top: 48px; }
+  /* Headline wraps here; open the leading so the box round "web" clears the line above */
+  .hero h1 { white-space: normal; text-wrap: balance; line-height: 1.2; }
   .cursor.team { right: 4%; }
   .app-kpis { grid-template-columns: 1fr 1fr; }
   .app-kpi:nth-child(3), .bw-nav, .bw-ext img { display: none; }

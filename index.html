@@ -101,29 +101,29 @@
         </div>
         <div class="cursor you"><svg viewBox="0 0 24 24"><path d="M3 2l18 8-8 2.5L10 21z"/></svg><span>You</span></div>
         <!-- Mirrors DivPic's real toolbar (toolbar.js, 4.2.1 release: no Inspect button). -->
-        <div class="dp-bar">
+        <div class="dp-bar" id="dp-bar">
           <span class="dp-grip"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><circle cx="5" cy="3" r="1"/><circle cx="11" cy="3" r="1"/><circle cx="5" cy="8" r="1"/><circle cx="11" cy="8" r="1"/><circle cx="5" cy="13" r="1"/><circle cx="11" cy="13" r="1"/></svg></span>
-          <span class="dp-brand"><img class="dp-logo" alt="" src="icon.png"><span class="dp-name">DivPic</span></span>
+          <button type="button" class="dp-brand" aria-label="DivPic"><img class="dp-logo" alt="" src="icon.png"><span class="dp-name">DivPic</span></button>
           <span class="dp-sep"></span>
-          <span class="dp-figma"><span class="dp-figma-label">Figma</span><span class="dp-switch"></span></span>
+          <button type="button" class="dp-figma" role="switch" aria-checked="false"><span class="dp-figma-label">Figma</span><span class="dp-switch"></span></button>
           <span class="dp-sep"></span>
           <span class="dp-opts">
             <span class="seg">
-              <span class="tb on"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.25" y="3.25" width="9.5" height="9.5" rx="2.2"/></svg></span>
-              <span class="tb"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5.5" y="5.5" width="7.5" height="7.5" rx="1.8"/><path d="M10 3.25H4.6A1.35 1.35 0 0 0 3.25 4.6V10" stroke-linecap="round"/></svg></span>
+              <button type="button" class="tb on" aria-label="Single element" aria-pressed="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.25" y="3.25" width="9.5" height="9.5" rx="2.2"/></svg></button>
+              <button type="button" class="tb" aria-label="Multiple elements" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5.5" y="5.5" width="7.5" height="7.5" rx="1.8"/><path d="M10 3.25H4.6A1.35 1.35 0 0 0 3.25 4.6V10" stroke-linecap="round"/></svg></button>
             </span>
             <span class="seg">
-              <span class="tb"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v6.4"/><path d="M5.3 6.4 8 9.1l2.7-2.7"/><path d="M3.2 12.4h9.6"/></svg></span>
-              <span class="tb on"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3.5" y="3.2" width="9" height="10.3" rx="1.8"/><path d="M6 3.2v-.5A1.1 1.1 0 0 1 7.1 1.6h1.8A1.1 1.1 0 0 1 10 2.7v.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <button type="button" class="tb" aria-label="Download" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v6.4"/><path d="M5.3 6.4 8 9.1l2.7-2.7"/><path d="M3.2 12.4h9.6"/></svg></button>
+              <button type="button" class="tb on" aria-label="Copy to clipboard" aria-pressed="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3.5" y="3.2" width="9" height="10.3" rx="1.8"/><path d="M6 3.2v-.5A1.1 1.1 0 0 1 7.1 1.6h1.8A1.1 1.1 0 0 1 10 2.7v.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </span>
-            <span class="seg seg-text"><span class="tb on">PNG</span><span class="tb">SVG</span></span>
+            <span class="seg seg-text"><button type="button" class="tb on" aria-pressed="true">PNG</button><button type="button" class="tb" aria-pressed="false">SVG</button></span>
           </span>
           <span class="dp-sep"></span>
-          <span class="dp-btn dp-btn-primary"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg>Select Element</span>
-          <span class="dp-btn"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V3.5A1.5 1.5 0 0 1 3.5 2H6"/><path d="M10 2h2.5A1.5 1.5 0 0 1 14 3.5V6"/><path d="M14 10v2.5a1.5 1.5 0 0 1-1.5 1.5H10"/><path d="M6 14H3.5A1.5 1.5 0 0 1 2 12.5V10"/></svg>Full Page</span>
+          <button type="button" class="dp-btn dp-btn-primary"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg>Select Element</button>
+          <button type="button" class="dp-btn"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V3.5A1.5 1.5 0 0 1 3.5 2H6"/><path d="M10 2h2.5A1.5 1.5 0 0 1 14 3.5V6"/><path d="M14 10v2.5a1.5 1.5 0 0 1-1.5 1.5H10"/><path d="M6 14H3.5A1.5 1.5 0 0 1 2 12.5V10"/></svg>Full Page</button>
           <span class="dp-sep"></span>
-          <span class="dp-iconbtn"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z"/></svg></span>
-          <span class="dp-iconbtn"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></span>
+          <button type="button" class="dp-iconbtn" aria-label="Settings"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z"/></svg></button>
+          <button type="button" class="dp-iconbtn" aria-label="Close toolbar"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
         </div>
       </div>
     </div>
@@ -630,6 +630,31 @@
     new IntersectionObserver(([e]) => { if (e.isIntersecting) startTour(); else stopTour(); }, { threshold: 0.4 }).observe(page);
   }
 
+  // Hero toolbar: every control responds like the real one. Select Element and
+  // Full Page drive the mock page's selection.
+  const bar = document.getElementById('dp-bar');
+  bar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    if (btn.classList.contains('tb')) {
+      btn.parentElement.querySelectorAll('.tb').forEach((b) => { b.classList.toggle('on', b === btn); b.setAttribute('aria-pressed', b === btn); });
+    } else if (btn.classList.contains('dp-figma')) {
+      btn.setAttribute('aria-checked', btn.getAttribute('aria-checked') !== 'true');
+    } else if (btn.classList.contains('dp-btn-primary')) {
+      stopTour();
+      select(selected === page ? page.querySelector('[data-initial]') : selected, true);
+    } else if (btn.classList.contains('dp-btn')) {
+      stopTour();
+      select(page, true);
+    } else if (btn.classList.contains('dp-brand')) {
+      bar.classList.remove('min');
+    } else if (btn.getAttribute('aria-label') === 'Close toolbar') {
+      bar.classList.add('min');
+    } else if (btn.getAttribute('aria-label') === 'Settings') {
+      btn.classList.toggle('spin');
+    }
+  });
+
   // Feature cards: a soft spotlight follows the pointer.
   document.querySelector('.feats').addEventListener('pointermove', (e) => {
     const card = e.target.closest('.feat');
@@ -665,15 +690,18 @@
     stacked.addEventListener('change', () => { stop(); turn = 0; });
   }
 
-  // Without hover, play each feature icon once as it scrolls into view.
+  // Feature cards light up under a mouse. Touch never sets them, so a tap mid-scroll can't leave one stuck on.
+  const feats = document.querySelectorAll('.feat');
+  feats.forEach((el) => {
+    el.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') el.classList.add('play'); });
+    el.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch') el.classList.remove('play'); });
+  });
+  // Without hover, the card crossing the middle of the screen lights up, so they follow the scroll in order.
   if (matchMedia('(hover: none)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const io = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
-      if (!isIntersecting) return;
-      target.classList.add('play');
-      setTimeout(() => target.classList.remove('play'), 1400);
-      io.unobserve(target);
-    }), { threshold: 0.6 });
-    document.querySelectorAll('.feat').forEach((el) => io.observe(el));
+      target.classList.toggle('play', isIntersecting);
+    }), { rootMargin: '-45% 0px -45% 0px' });
+    feats.forEach((el) => io.observe(el));
   }
 </script>
 <script src="get-menu.js"></script>
