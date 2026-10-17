@@ -149,38 +149,55 @@
       </div>
       <div class="modes">
         <article class="mode png">
-          <span class="tag">.png</span>
-          <div class="art" aria-hidden="true"><div class="art-png"><b></b><b></b><b></b><b style="width:70%"></b><em>2×</em></div></div>
-          <h3>Pixel-perfect screenshots</h3>
-          <p>Cropped to the exact element, sharp on retina, saved or copied to your clipboard.</p>
-        </article>
-        <article class="mode svg">
-          <span class="tag">.svg</span>
-          <div class="art" aria-hidden="true">
-            <svg class="art-svg" viewBox="0 0 170 120">
-              <rect x="8" y="10" width="154" height="100" rx="14"/>
-              <path d="M8 44 C 60 20, 100 80, 162 44"/>
-              <circle class="node" cx="8" cy="44" r="5"/><circle class="node" cx="162" cy="44" r="5"/>
-              <circle class="node" cx="60" cy="20" r="4"/><circle class="node" cx="100" cy="80" r="4"/>
-              <path d="M8 44 L60 20 M162 44 L100 80" stroke-dasharray="3 3"/>
-            </svg>
-          </div>
-          <h3>Vectors that scale</h3>
-          <p>Export the element as SVG for decks, docs and anything that needs to stay crisp at any size.</p>
-        </article>
-        <article class="mode fig">
-          <span class="tag">⌘V in Figma</span>
-          <div class="art" aria-hidden="true">
-            <div class="art-fig">
-              <div><small>#</small>Card</div>
-              <div class="d1"><small>#</small>Header</div>
-              <div class="d2 on"><small>T</small>Title</div>
-              <div class="d2"><small>◻</small>Avatar</div>
-              <div class="d1"><small>#</small>Chart</div>
+          <div class="mode-top"><span class="tag">.png</span></div>
+          <div class="mode-art" aria-hidden="true">
+            <div class="mp-shot">
+              <b></b><span></span><span></span><span style="width:55%"></span>
+              <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+              <em>2×</em>
             </div>
           </div>
-          <h3>Editable Figma layers</h3>
-          <p>Copy, switch to Figma, paste. Frames, text and images arrive as real layers, not a flat picture.</p>
+          <div class="mode-txt">
+            <h3>Pixel-perfect screenshots</h3>
+            <p>Cropped to the exact element, sharp on retina, saved or copied to your clipboard.</p>
+          </div>
+        </article>
+        <article class="mode svg">
+          <div class="mode-top"><span class="tag">.svg</span></div>
+          <div class="mode-art" aria-hidden="true">
+            <svg class="ms-vec" viewBox="0 0 420 240">
+              <rect class="frame" x="20" y="20" width="360" height="240" rx="22"/>
+              <path class="handle" d="M40 120 L130 50 M360 120 L270 190"/>
+              <path class="curve" pathLength="1" d="M40 120 C 130 50, 270 190, 360 120"/>
+              <circle class="node" cx="40" cy="120" r="6"/><circle class="node" cx="360" cy="120" r="6"/>
+              <circle class="knob" cx="130" cy="50" r="4.5"/><circle class="knob" cx="270" cy="190" r="4.5"/>
+            </svg>
+            <span class="ms-zoom">400%</span>
+          </div>
+          <div class="mode-txt">
+            <h3>Vectors that scale</h3>
+            <p>Export the element as SVG for decks, docs and anything that needs to stay crisp at any size.</p>
+          </div>
+        </article>
+        <article class="mode fig">
+          <div class="mode-top"><span class="tag">⌘V in Figma</span></div>
+          <div class="mode-art" aria-hidden="true">
+            <div class="mf-win">
+              <div class="mf-layers">
+                <small>Layers</small>
+                <div><u>#</u>Card</div>
+                <div class="d1"><u>#</u>Header</div>
+                <div class="d2 on"><u>T</u>Title</div>
+                <div class="d2"><u>◻</u>Avatar</div>
+                <div class="d1"><u>#</u>Chart</div>
+              </div>
+              <div class="mf-canvas"><div class="mf-frame"><span>Card</span><b></b><i></i><i></i></div></div>
+            </div>
+          </div>
+          <div class="mode-txt">
+            <h3>Editable Figma layers</h3>
+            <p>Copy, switch to Figma, paste. Frames, text and images arrive as real layers, not a flat picture.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -195,21 +212,28 @@
       </div>
       <div class="steps">
         <div class="step">
-          <div class="step-art s1" aria-hidden="true">
-            <div class="s1-bar">
-              <span class="s1-url"></span>
-              <span class="s1-ext"><img src="icon.png" alt=""></span>
-              <svg class="s1-puz" viewBox="0 0 24 24"><path d="M10 4a2 2 0 0 1 4 0v2h4v4h-2a2 2 0 0 0 0 4h2v4h-4v-2a2 2 0 0 0-4 0v2H6v-4H4a2 2 0 0 1 0-4h2V6h4z"/></svg>
+          <div class="n">1</div>
+          <div class="step-art" aria-hidden="true"><div class="art-stage s1">
+            <div class="s1-win">
+              <div class="s1-bar">
+                <span class="s1-url"></span>
+                <span class="s1-btn s1-ext"><img src="icon.png" alt=""></span>
+                <span class="s1-btn"><svg viewBox="0 0 24 24"><path d="M10 4a2 2 0 0 1 4 0v2h4v4h-2a2 2 0 0 0 0 4h2v4h-4v-2a2 2 0 0 0-4 0v2H6v-4H4a2 2 0 0 1 0-4h2V6h4z"/></svg></span>
+                <span class="s1-btn"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></span>
+              </div>
+              <div class="s1-page"><b></b><i></i><span></span><span></span></div>
             </div>
             <div class="s1-tb"><img src="icon.png" alt=""><b>DivPic</b><i></i><span class="on">Element</span><span>Full page</span></div>
             <svg class="mcur" viewBox="0 0 16 20"><path d="M1.5 1.5v15l4-3.8 2.7 6 2.6-1.1-2.6-5.9h5.6z"/></svg>
+          </div></div>
+          <div class="step-txt">
+            <h3>Open the toolbar</h3>
+            <p>Click the DivPic icon or press <kbd>⌘ ⇧ E</kbd> (<kbd>Ctrl ⇧ E</kbd> on Windows). A small toolbar floats over the page.</p>
           </div>
-          <div class="n">1</div>
-          <h3>Open the toolbar</h3>
-          <p>Click the DivPic icon or press <kbd>⌘ ⇧ E</kbd> (<kbd>Ctrl ⇧ E</kbd> on Windows). A small toolbar floats over the page.</p>
         </div>
         <div class="step">
-          <div class="step-art s2" aria-hidden="true">
+          <div class="n">2</div>
+          <div class="step-art" aria-hidden="true"><div class="art-stage s2">
             <div class="s2-page">
               <div class="s2-head"><b></b><span></span><span></span></div>
               <div class="s2-cards">
@@ -218,22 +242,27 @@
               </div>
             </div>
             <svg class="mcur" viewBox="0 0 16 20"><path d="M1.5 1.5v15l4-3.8 2.7 6 2.6-1.1-2.6-5.9h5.6z"/></svg>
+          </div></div>
+          <div class="step-txt">
+            <h3>Point and click</h3>
+            <p>Hover to highlight any element, then click it. Or hit <strong>Full page</strong> to take everything in one go.</p>
           </div>
-          <div class="n">2</div>
-          <h3>Point and click</h3>
-          <p>Hover to highlight any element, then click it. Or hit <strong>Full page</strong> to take everything in one go.</p>
         </div>
         <div class="step">
-          <div class="step-art s3" aria-hidden="true">
-            <div class="s3-layers"><small>Layers</small><i></i><i class="d"></i><i class="d"></i><i></i></div>
-            <div class="s3-canvas">
-              <div class="s3-frame"><span>Card</span><b></b><i></i><i></i></div>
-              <div class="s3-keys"><kbd>⌘</kbd><kbd>V</kbd></div>
-            </div>
-          </div>
           <div class="n">3</div>
-          <h3>Save, copy or paste</h3>
-          <p>Download a PNG or SVG, copy to the clipboard, or paste straight into a Figma file.</p>
+          <div class="step-art" aria-hidden="true"><div class="art-stage s3">
+            <div class="s3-win">
+              <div class="s3-layers"><small>Layers</small><i></i><i class="d"></i><i class="d"></i><i></i></div>
+              <div class="s3-canvas">
+                <div class="s3-frame"><span>Card</span><b></b><i></i><i></i></div>
+                <div class="s3-keys"><kbd>⌘</kbd><kbd>V</kbd></div>
+              </div>
+            </div>
+          </div></div>
+          <div class="step-txt">
+            <h3>Save, copy or paste</h3>
+            <p>Download a PNG or SVG, copy to the clipboard, or paste straight into a Figma file.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -297,7 +326,7 @@
     <div class="wrap">
       <div class="panel violet">
         <div>
-          <div class="kicker">Figma mode</div>
+          <div class="kicker with-logo"><svg class="figma-logo" viewBox="0 0 38 57" aria-hidden="true"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg>Figma mode</div>
           <h2>From live site to layers you can edit.</h2>
           <p class="lede">Stop rebuilding UI by hand from screenshots. DivPic reads the page's real structure and styles, so what lands in Figma is something you can work with.</p>
           <ul class="ticks">
@@ -307,7 +336,8 @@
             <li>Images, borders, radii and shadows kept intact</li>
           </ul>
         </div>
-        <div class="layers" aria-hidden="true">
+        <div class="panel-art" aria-hidden="true">
+        <div class="layers">
           <header><span>Layers</span><span>Pasted from DivPic</span></header>
           <div><small>⛶</small>Captured frame</div>
           <div class="d1"><small>#</small>Header</div>
@@ -317,6 +347,7 @@
           <div class="d2 on"><small>T</small>Heading</div>
           <div class="d2"><small>T</small>Paragraph</div>
           <div class="d2"><small>#</small>Button</div>
+        </div>
         </div>
       </div>
     </div>
@@ -374,7 +405,7 @@
     <div class="wrap">
       <div class="panel dark">
         <div>
-          <div class="kicker" style="color:#a8abb4">Private by default</div>
+          <div class="kicker">Private by default</div>
           <h2>Your captures never leave your machine.</h2>
           <p class="lede">Screenshots are made right in your browser. No servers, no uploads, no account to start.</p>
           <ul class="ticks">
@@ -382,11 +413,14 @@
             <li>Figma mode asks for a Google sign-in, nothing more</li>
             <li>Delete your account any time from settings</li>
           </ul>
-          <p style="margin-top:28px"><a href="privacy.html" style="color:#f3f3f5">Read the privacy policy →</a></p>
+          <p class="more"><a href="privacy.html">Read the privacy policy →</a></p>
         </div>
-        <div class="lock" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.3"/></svg>
-          <em>On-device</em>
+        <div class="panel-art" aria-hidden="true">
+          <div class="lock">
+            <i></i><i></i><i></i>
+            <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.3"/></svg>
+            <em>On-device</em>
+          </div>
         </div>
       </div>
     </div>
@@ -606,16 +640,41 @@
     card.style.setProperty('--my', `${e.clientY - r.top}px`);
   });
 
-  // Without hover, play the step loops while they're on screen and each feature icon once.
+  // Steps play by themselves, one after another, while they're on screen.
+  // Side by side they take turns; stacked on a phone, the one in view plays.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const stepsEl = document.querySelector('.steps');
+    const steps = [...stepsEl.querySelectorAll('.step')];
+    const stacked = matchMedia('(max-width: 900px)');
+    let turn = 0, timer = null;
+    const play = (step) => {
+      steps.forEach((el) => el.classList.remove('play'));
+      void step.offsetWidth; // restart the animation even if it's the same card
+      step.classList.add('play');
+    };
+    const next = () => { play(steps[turn]); turn = (turn + 1) % steps.length; timer = setTimeout(next, 3600); };
+    const stop = () => { clearTimeout(timer); timer = null; steps.forEach((el) => el.classList.remove('play')); };
+    new IntersectionObserver(([e]) => {
+      if (stacked.matches) return;
+      if (e.isIntersecting) { if (!timer) next(); } else stop();
+    }, { threshold: 0.4 }).observe(stepsEl);
+    const stepIo = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
+      if (!stacked.matches) return;
+      if (isIntersecting) play(target); else target.classList.remove('play');
+    }), { threshold: 0.6 });
+    steps.forEach((el) => stepIo.observe(el));
+    stacked.addEventListener('change', () => { stop(); turn = 0; });
+  }
+
+  // Without hover, play each feature icon once as it scrolls into view.
   if (matchMedia('(hover: none)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const io = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
-      if (target.classList.contains('step')) { target.classList.toggle('play', isIntersecting); return; }
       if (!isIntersecting) return;
       target.classList.add('play');
       setTimeout(() => target.classList.remove('play'), 1400);
       io.unobserve(target);
     }), { threshold: 0.6 });
-    document.querySelectorAll('.step, .feat').forEach((el) => io.observe(el));
+    document.querySelectorAll('.feat').forEach((el) => io.observe(el));
   }
 </script>
 <script src="get-menu.js"></script>

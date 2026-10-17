@@ -6,35 +6,85 @@
   <title>DivPic Support</title>
   <meta name="description" content="DivPic captures any part of a web page as a PNG or SVG, or copies it into Figma as editable layers.">
   <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="blog/blog.css">
 </head>
 <body>
-<main>
-  <header><img src="icon.png" alt=""><a href="./">DivPic</a></header>
 
-  <h1>Capture any part of a web page</h1>
-  <p class="muted">Save it as a PNG or SVG, copy it to the clipboard, or paste it into Figma as editable frames. Available for Chrome, Firefox and Safari.</p>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="icon.png" alt="">DivPic</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#modes">What it does</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#figma">Figma mode</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="index.html#faq">Help</a>
+    </nav>
+    <div class="get-menu">
+      <button class="btn solid sm" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu-list">Get DivPic<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="get-menu-list" id="get-menu-list" role="menu" hidden>
+        <a role="menuitem" href="https://chromewebstore.google.com/detail/divpic/lpdabdkfnmackfinabbgelafogmahjni" target="_blank" rel="noopener"><img src="images/browsers/chrome.svg" alt="" width="24" height="24"><span><strong>Chrome</strong><small>Also Arc, Edge and Brave</small></span></a>
+        <a role="menuitem" href="https://addons.mozilla.org/firefox/addon/divpic/" target="_blank" rel="noopener"><img src="images/browsers/firefox.svg" alt="" width="24" height="24"><span><strong>Firefox</strong><small>Firefox Add-ons</small></span></a>
+        <div class="soon" aria-disabled="true"><img src="images/browsers/safari.svg" alt="" width="24" height="24"><span><strong>Safari</strong><small>Coming soon to the Mac App Store</small></span></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <h2>Getting started on Safari</h2>
-  <ol>
-    <li>Install DivPic from the Mac App Store and open the DivPic app once.</li>
-    <li>In Safari, open <strong>Settings → Extensions</strong> and turn on DivPic.</li>
-    <li>Allow DivPic on the websites you want to capture (or on all websites).</li>
-    <li>Click the DivPic button in the Safari toolbar, or press <strong>Shift-Command-E</strong>.</li>
-  </ol>
+<div class="article-shell">
+  <main class="article">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">DivPic</a><span class="sep">→</span><a class="here" href="support.html">Support</a>
+    </nav>
+    <h1>Capture any part of a web page</h1>
+    <div class="byline"><span data-read-time></span></div>
 
-  <h2>Common questions</h2>
-  <h3>The DivPic button does nothing</h3>
-  <p>Reload the page. Pages that were open before DivPic was turned on don't have it yet. Also check that DivPic is allowed on that website in Safari Settings → Websites → DivPic.</p>
-  <h3>Do I need an account?</h3>
-  <p>No. Capturing, saving and copying work without one. Only Figma mode asks you to sign in with Google.</p>
-  <h3>Are my screenshots uploaded?</h3>
-  <p>No. Screenshots are made on your device and never leave it. See the <a href="privacy.html">privacy policy</a>.</p>
+    <details class="toc-mobile"><summary>On this page</summary><ol></ol></details>
 
-  <h2>Contact</h2>
-  <p>Questions, bugs or ideas: <a href="mailto:ragulsundaram15@gmail.com">ragulsundaram15@gmail.com</a></p>
+    <div class="prose">
+      <p class="lede">Save it as a PNG or SVG, copy it to the clipboard, or paste it into Figma as editable frames. Available for Chrome, Firefox and Safari.</p>
 
-  <footer><a href="privacy.html">Privacy policy</a> · © 2026 Ragul Sundaram</footer>
-</main>
+      <h2>Getting started on Safari</h2>
+      <ol>
+        <li>Install DivPic from the Mac App Store and open the DivPic app once.</li>
+        <li>In Safari, open <strong>Settings → Extensions</strong> and turn on DivPic.</li>
+        <li>Allow DivPic on the websites you want to capture (or on all websites).</li>
+        <li>Click the DivPic button in the Safari toolbar, or press <strong>Shift-Command-E</strong>.</li>
+      </ol>
+
+      <h2>Common questions</h2>
+      <h3>The DivPic button does nothing</h3>
+      <p>Reload the page. Pages that were open before DivPic was turned on don't have it yet. Also check that DivPic is allowed on that website in Safari Settings → Websites → DivPic.</p>
+      <h3>Do I need an account?</h3>
+      <p>No. Capturing, saving and copying work without one. Only Figma mode asks you to sign in with Google.</p>
+      <h3>Are my screenshots uploaded?</h3>
+      <p>No. Screenshots are made on your device and never leave it. See the <a href="privacy.html">privacy policy</a>.</p>
+
+      <h2>Contact</h2>
+      <p>Questions, bugs or ideas: <a href="mailto:ragulsundaram15@gmail.com">ragulsundaram15@gmail.com</a></p>
+    </div>
+  </main>
+  <aside></aside>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="icon.png" alt="">DivPic</a>
+    <span>© 2026 Ragul Sundaram</span>
+    <nav aria-label="Footer">
+      <a href="blog/index.html">Blog</a>
+      <a href="index.html#faq">Help</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:ragulsundaram15@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+<script src="blog/blog.js"></script>
+<script src="get-menu.js"></script>
 </body>
 </html>
