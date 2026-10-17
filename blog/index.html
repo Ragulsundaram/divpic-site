@@ -10,9 +10,8 @@
   <meta property="og:description" content="Guides for screenshots and copying websites into Figma.">
   <meta property="og:image" content="https://ragulsundaram.github.io/divpic-site/blog/images/features.jpg">
   <link rel="icon" href="../icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../site.css">
   <link rel="stylesheet" href="blog.css">
 </head>
@@ -54,15 +53,15 @@
   <div class="wrap blog-end">
     <div class="featured">
       <a href="copy-website-to-figma.html">
-        <img src="images/figma-layers.jpg" alt="" width="1280" height="800" loading="lazy">
+        <img src="images/figma-layers.webp" alt="" width="1280" height="800" fetchpriority="high">
         <div class="meta"><span class="cat">Figma mode</span><strong>How to copy any website into Figma as editable layers</strong></div>
       </a>
       <a href="screenshot-html-element.html">
-        <img src="images/paste-anywhere.jpg" alt="" width="1280" height="800" loading="lazy">
+        <img src="images/paste-anywhere.webp" alt="" width="1280" height="800">
         <div class="meta"><span class="cat">Screenshots</span><strong>How to screenshot a single element on a web page</strong></div>
       </a>
       <a href="full-page-screenshot.html">
-        <img src="images/full-page-no-plugin.jpg" alt="" width="1280" height="800" loading="lazy">
+        <img src="images/full-page-no-plugin.webp" alt="" width="1280" height="800">
         <div class="meta"><span class="cat">Screenshots</span><strong>How to take a full-page screenshot, lazy-loaded parts included</strong></div>
       </a>
     </div>

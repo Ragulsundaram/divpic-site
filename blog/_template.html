@@ -6,6 +6,7 @@
   2. Replace every SLUG, TITLE, DESCRIPTION, CATEGORY, DATE and IMAGE below.
   3. Add the article to blog/index.html (a pill under its category, featured card optional)
      and to sitemap.xml.
+  4. Put each image in blog/images twice: IMAGE.webp for the page, IMAGE.jpg for og:image.
 
   Blocks you can use inside .prose (delete what you don't need):
     <h2>                 section; appears in "On this page" automatically.
@@ -31,9 +32,8 @@
   <meta property="og:image" content="https://ragulsundaram.github.io/divpic-site/blog/images/IMAGE.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../site.css">
   <link rel="stylesheet" href="blog.css">
   <script type="application/ld+json">
@@ -120,7 +120,7 @@
 
       <figure class="shot-block">
         <button class="frame" type="button" aria-label="View larger image">
-          <img src="images/IMAGE.jpg" alt="Describe what the image shows" width="1280" height="800" loading="lazy">
+          <img src="images/IMAGE.webp" alt="Describe what the image shows" width="1280" height="800" loading="lazy">
         </button>
         <figcaption>Caption.</figcaption>
       </figure>
