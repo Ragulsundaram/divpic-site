@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DivPic Privacy Policy</title>
+  <meta name="description" content="What DivPic collects, what it doesn't, and why it needs each permission.">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><img src="icon.png" alt=""><a href="./">DivPic</a></header>
+
+  <h1>Privacy Policy</h1>
+  <p class="muted">Last updated: October 17, 2026</p>
+
+  <h2>Data collection</h2>
+  <p>DivPic does not collect the content of your screenshots or your browsing history. Captured images are processed entirely on your device and are never uploaded to any server.</p>
+
+  <h3>What we collect</h3>
+  <ul>
+    <li><strong>Anonymous usage analytics:</strong> DivPic sends anonymous feature-usage events (for example, which capture mode was used) to Google Analytics via the GA4 Measurement Protocol. These events are tied to a random, per-install identifier, not to your name, email, or the content you capture. No page URLs, page content, or personal data are included.
+      <p><strong>Firefox:</strong> analytics is optional. Nothing is sent unless you opt in to technical and interaction data, either when installing or later in about:addons.</p>
+    </li>
+    <li><strong>Account information (optional):</strong> If you choose to sign in with Google to use Figma export features, your Google email address and display name are stored in our backend (Supabase) solely to identify your account. Sign-in is entirely optional: all screenshot capture features work without an account.</li>
+  </ul>
+
+  <h3>What we do not collect</h3>
+  <ul>
+    <li>Content of screenshots or captured elements</li>
+    <li>Browsing history or visited URLs</li>
+    <li>Passwords, financial information, or health data</li>
+    <li>Any data from pages you visit beyond what is needed to render the screenshot on your device</li>
+  </ul>
+
+  <h3>Permissions</h3>
+  <p>The extension requires these permissions for basic functionality:</p>
+  <ul>
+    <li><code>activeTab</code>: to capture the current tab's visible area</li>
+    <li><code>downloads</code>: to save screenshots to your Downloads folder</li>
+    <li><code>notifications</code>: to confirm successful saves</li>
+    <li><code>clipboardWrite</code>: to copy screenshots to the clipboard</li>
+    <li><code>storage</code>: to save your preferences locally</li>
+    <li><code>identity</code>: to support optional Google sign-in for Figma export</li>
+    <li>Access to all websites (<code>&lt;all_urls&gt;</code>): to capture elements on any page you choose, and to load the images on that page when building a Figma export. Images are fetched from the same servers the page already loads them from, and are processed on your device only.</li>
+  </ul>
+  <p><strong>Safari (Mac App Store):</strong> Safari has no <code>downloads</code>, <code>notifications</code> or <code>identity</code> permissions, so DivPic saves files through the page, shows confirmations inside the page, and runs the optional Google sign-in in a normal Safari tab. For that it also asks for <code>tabs</code>, used only to notice when the sign-in tab reaches DivPic's sign-in page so it can read the sign-in result and close the tab. DivPic does not read or store the addresses of your other tabs.</p>
+
+  <h3>Third-party services</h3>
+  <ul>
+    <li><strong>Google Analytics (GA4)</strong>: anonymous usage analytics</li>
+    <li><strong>Supabase</strong>: account storage for signed-in users only</li>
+  </ul>
+
+  <h3>Updates</h3>
+  <p>This privacy policy may be updated occasionally. Changes will be reflected in the "Last updated" date above.</p>
+
+  <h3>Contact</h3>
+  <p>For questions about this privacy policy, contact: <a href="mailto:ragulsundaram15@gmail.com">ragulsundaram15@gmail.com</a></p>
+
+  <footer><a href="./">DivPic support</a> · © 2026 Ragul Sundaram</footer>
+</main>
+</body>
+</html>
