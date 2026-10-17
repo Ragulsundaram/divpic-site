@@ -665,6 +665,7 @@ kbd { font: 600 13px/1 ui-monospace, Menlo, monospace; padding: 4px 7px; border-
 .faq-list summary:hover { background: color-mix(in srgb, var(--ink) 6%, var(--soft)); }
 .faq-list summary::after { content: "+"; font-size: 18px; font-weight: 400; line-height: 1; }
 .faq-list details[open] summary::after { content: "−"; }
+.faq-list details.closing summary::after { content: "+"; }
 .faq-list details[open] summary { background: color-mix(in srgb, var(--ink) 8%, var(--soft)); }
 .faq-list .answer { background: var(--bg); padding: 14px 16px 16px; font-size: 16px; }
 .faq-list .answer > * + * { margin-top: 12px; }
