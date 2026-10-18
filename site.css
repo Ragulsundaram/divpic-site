@@ -762,7 +762,7 @@ footer.site a:hover { color: var(--ink); }
 .cl-empty { color: var(--ink-2); }
 /* Back to top: appears once the reader is a screen deep, styled like the solid nav button. */
 .to-top {
-  position: fixed; right: 24px; bottom: 24px; z-index: 40;
+  position: fixed; right: 24px; bottom: calc(24px + var(--lift, 0px)); z-index: 40;
   display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border-radius: 50%;
   background: var(--btn-bg); color: var(--btn-ink); border: 1px solid var(--btn-bg); cursor: pointer;
   box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .45), 0 0 0 1px var(--line);
@@ -782,7 +782,7 @@ footer.site a:hover { color: var(--ink); }
   .rel-when .latest { margin-top: 0; }
   .rel-body { padding-left: 0; }
   .rel-body li { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 14px 16px; }
-  .to-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+  .to-top { right: 16px; bottom: calc(16px + var(--lift, 0px)); width: 44px; height: 44px; }
 }
 
 /* ---------- Responsive ---------- */

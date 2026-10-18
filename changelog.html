@@ -234,12 +234,16 @@
   // Sticky nav border once the page scrolls.
   const nav = document.getElementById('nav');
   const toTop = document.querySelector('.to-top');
+  const footer = document.querySelector('footer.site');
   const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 8);
     toTop.classList.toggle('show', window.scrollY > window.innerHeight);
+    // Stay above the footer: once it scrolls into view, lift the button by the overlap.
+    toTop.style.setProperty('--lift', Math.max(0, window.innerHeight - footer.getBoundingClientRect().top) + 'px');
   };
   toTop.addEventListener('click', () => window.scrollTo({ top: 0 }));
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   onScroll();
 
   // Filter by kind of change; a release with nothing of that kind steps out of the timeline.
@@ -255,6 +259,7 @@
       if (shown) any = true;
     });
     document.querySelector('.cl-empty').hidden = any;
+    onScroll(); // the page got shorter or taller, so the footer may have moved
   }));
 </script>
 <script src="get-menu.js"></script>
