@@ -741,7 +741,11 @@ footer.site a:hover { color: var(--ink); }
 .rel::before { content: ""; position: absolute; left: 228px; top: 10px; bottom: -10px; width: 1px; background: var(--line); }
 .rel.first::before, .rel:last-child::before { bottom: auto; height: 0; }
 .rel::after { content: ""; position: absolute; left: 222px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink-2); }
-.rel:first-child::after { background: var(--tile-blue); border-color: var(--tile-blue); box-shadow: 0 0 0 5px color-mix(in srgb, var(--tile-blue) 20%, transparent); }
+.rel:first-child::after { background: var(--tile-blue); border-color: var(--tile-blue); box-shadow: 0 0 0 5px color-mix(in srgb, var(--tile-blue) 20%, transparent); animation: rel-live 2s ease-out infinite; }
+@keyframes rel-live {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tile-blue) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--tile-blue) 0%, transparent); }
+}
 .rel-when { position: sticky; top: 92px; align-self: start; display: grid; justify-items: start; gap: 4px; }
 .ver { font: 700 28px/1 "Inter Tight", "Inter", sans-serif; letter-spacing: -0.03em; text-decoration: none; }
 .ver:hover { color: var(--blue-ink); }
