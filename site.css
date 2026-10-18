@@ -760,6 +760,19 @@ footer.site a:hover { color: var(--ink); }
 .rel-body li strong { font-weight: 600; }
 .tagk { justify-self: start; padding: 4px 9px; border-radius: 999px; font: 700 11.5px/1 var(--font-mono); color: var(--k); background: color-mix(in srgb, var(--k) 10%, var(--bg)); border: 1px solid color-mix(in srgb, var(--k) 30%, var(--line)); }
 .cl-empty { color: var(--ink-2); }
+/* Back to top: appears once the reader is a screen deep, styled like the solid nav button. */
+.to-top {
+  position: fixed; right: 24px; bottom: 24px; z-index: 40;
+  display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border-radius: 50%;
+  background: var(--btn-bg); color: var(--btn-ink); border: 1px solid var(--btn-bg); cursor: pointer;
+  box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .45), 0 0 0 1px var(--line);
+  opacity: 0; visibility: hidden; transform: translateY(12px) scale(.9);
+  transition: opacity .2s var(--ease), transform .2s var(--ease), visibility 0s .2s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; transition: opacity .2s var(--ease), transform .2s var(--ease); }
+.to-top.show:hover { transform: translateY(-2px); }
+.to-top.show:active { transform: translateY(0) scale(.96); }
+.to-top svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 760px) {
   .cl { padding-top: 48px; }
   .rel { grid-template-columns: minmax(0, 1fr); padding: 0 0 44px 28px; }
@@ -769,6 +782,7 @@ footer.site a:hover { color: var(--ink); }
   .rel-when .latest { margin-top: 0; }
   .rel-body { padding-left: 0; }
   .rel-body li { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 14px 16px; }
+  .to-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
 }
 
 /* ---------- Responsive ---------- */

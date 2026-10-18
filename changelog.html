@@ -213,6 +213,8 @@
   </div>
 </main>
 
+<button class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
 <footer class="site">
   <div class="wrap">
     <a class="brand" href="/"><img src="icon.png" alt="">DivPic</a>
@@ -231,7 +233,12 @@
 <script>
   // Sticky nav border once the page scrolls.
   const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  const toTop = document.querySelector('.to-top');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+    toTop.classList.toggle('show', window.scrollY > window.innerHeight);
+  };
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0 }));
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
