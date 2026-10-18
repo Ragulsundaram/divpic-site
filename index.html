@@ -370,10 +370,10 @@
             <div class="swatches" id="bg">
               <button type="button" class="none" data-bg="transparent" aria-label="Transparent" aria-pressed="false"></button>
               <button type="button" data-bg="#ffffff" style="background:#fff" aria-label="White" aria-pressed="false"></button>
-              <button type="button" data-bg="#3b82f6" style="background:#3b82f6" aria-label="Blue" aria-pressed="true"></button>
+              <button type="button" data-bg="#3b82f6" style="background:#3b82f6" aria-label="Blue" aria-pressed="false"></button>
               <button type="button" data-bg="#fbbf24" style="background:#fbbf24" aria-label="Yellow" aria-pressed="false"></button>
               <button type="button" data-bg="#22c55e" style="background:#22c55e" aria-label="Green" aria-pressed="false"></button>
-              <button type="button" data-bg="#0e0e10" style="background:#0e0e10" aria-label="Black" aria-pressed="false"></button>
+              <button type="button" data-bg="#0e0e10" style="background:#0e0e10" aria-label="Black" aria-pressed="true"></button>
             </div>
           </div>
           <div class="ctl"><label for="pad">Padding <output for="pad" id="pad-o">40px</output></label><input type="range" id="pad" min="0" max="80" value="40"></div>
@@ -382,17 +382,16 @@
         </div>
         <div class="preview-area">
           <div class="shot" id="shot">
-            <div class="card">
-              <div class="row">
-                <div class="av"><b></b><b></b><b></b><b></b></div>
-                <div class="lines"><div class="sk"></div><div class="sk"></div></div>
-              </div>
-              <div class="chart">
-                <b style="height:40%;background:var(--tile-blue)"></b>
-                <b style="height:70%;background:var(--tile-yellow)"></b>
-                <b style="height:55%;background:var(--tile-red)"></b>
-                <b style="height:90%;background:var(--tile-green)"></b>
-              </div>
+            <div class="app-card shot-card">
+              <div class="app-card-head"><div><span class="app-label">Revenue</span><strong>$48,210</strong></div><span class="chip up">+12.4%</span></div>
+              <svg class="app-plot" viewBox="0 0 400 130" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="shot-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity=".35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient></defs>
+                <path class="grid" d="M0 32H400M0 65H400M0 98H400"/>
+                <path class="prev" d="M0 100 C40 92 70 96 100 84 S160 70 200 74 S270 58 300 62 S360 46 400 50"/>
+                <path class="area" style="fill:url(#shot-fill)" d="M0 96 C40 80 70 88 100 70 S160 50 200 56 S260 30 300 36 S360 14 400 18 V130 H0Z"/>
+                <path class="line" d="M0 96 C40 80 70 88 100 70 S160 50 200 56 S260 30 300 36 S360 14 400 18"/>
+              </svg>
+              <span class="app-legend"><i></i>This month<i class="prev"></i>Last month</span>
             </div>
           </div>
         </div>
@@ -538,7 +537,7 @@
 
   // Style demo: mirrors DivPic's background / padding / radius / shadow settings.
   const shot = document.getElementById('shot');
-  const state = { bg: '#3b82f6', pad: 40, rad: 20, shd: 30 };
+  const state = { bg: '#0e0e10', pad: 40, rad: 20, shd: 30 };
   function render() {
     shot.style.background = state.bg;
     shot.style.padding = state.pad + 'px';
