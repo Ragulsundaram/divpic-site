@@ -151,9 +151,9 @@
       if (yes) {
         thanks.textContent = 'Thanks! Glad it helped.';
       } else {
-        const mail = 'mailto:ragulsundaram15@gmail.com?subject=' + encodeURIComponent('Blog feedback: ' + title);
+        const mail = 'https://github.com/Ragulsundaram/divpic-public/issues/new?title=' + encodeURIComponent('Blog feedback: ' + title);
         thanks.innerHTML = 'Thanks for telling us. <a>Tell us what was missing</a> and we\'ll fix the article.';
-        thanks.querySelector('a').href = mail;
+        Object.assign(thanks.querySelector('a'), { href: mail, target: '_blank', rel: 'noopener' });
       }
     };
     helpful.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => {
