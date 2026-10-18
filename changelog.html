@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DivPic Changelog</title>
+  <meta name="description" content="Every DivPic release, newest first: what's new, what got better and what got fixed, from 1.0 to today.">
+  <link rel="canonical" href="https://ragulsundaram.github.io/divpic-site/changelog.html">
+  <link rel="icon" href="icon.png">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="icon.png" alt="">DivPic</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#modes">What it does</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#figma">Figma mode</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="index.html#faq">Help</a>
+      <a href="changelog.html" aria-current="page">Changelog</a>
+    </nav>
+    <div class="get-menu">
+      <button class="btn solid sm" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu-list">Get DivPic<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="get-menu-list" id="get-menu-list" role="menu" hidden>
+        <a role="menuitem" href="https://chromewebstore.google.com/detail/divpic/lpdabdkfnmackfinabbgelafogmahjni" target="_blank" rel="noopener"><img src="images/browsers/chrome.svg" alt="" width="24" height="24"><span><strong>Chrome</strong><small>Also Arc, Edge and Brave</small></span></a>
+        <a role="menuitem" href="https://addons.mozilla.org/firefox/addon/divpic/" target="_blank" rel="noopener"><img src="images/browsers/firefox.svg" alt="" width="24" height="24"><span><strong>Firefox</strong><small>Firefox Add-ons</small></span></a>
+        <div class="soon" aria-disabled="true"><img src="images/browsers/safari.svg" alt="" width="24" height="24"><span><strong>Safari</strong><small>Coming soon to the Mac App Store</small></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="cl">
+  <div class="wrap">
+    <div class="cl-head">
+      <p class="kicker">Changelog</p>
+      <h1>Every release, newest first.</h1>
+      <p>What changed in DivPic, from the first element screenshot to Figma mode. Dates are when each version was finished, so a store can show it a day or two later.</p>
+      <div class="cl-filter" role="group" aria-label="Show">
+        <button type="button" aria-pressed="true" data-kind="all">All</button>
+        <button type="button" aria-pressed="false" data-kind="new"><i class="k new"></i>New</button>
+        <button type="button" aria-pressed="false" data-kind="improved"><i class="k improved"></i>Improved</button>
+        <button type="button" aria-pressed="false" data-kind="fixed"><i class="k fixed"></i>Fixed</button>
+      </div>
+    </div>
+
+    <ol class="timeline">
+      <li class="rel" id="v4.2.1">
+        <div class="rel-when"><a class="ver" href="#v4.2.1">4.2.1</a><time datetime="2026-10-17">Oct 17, 2026</time><span class="latest">Latest</span></div>
+        <div class="rel-body">
+          <h2>Clean element shots on busy pages</h2>
+          <ul>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span>Capturing an element on a page with a pinned or scroll-linked header, like github.com, no longer bakes strips of that header and other sticky bars into the PNG.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>An element that fits on screen is scrolled fully into view and captured in one shot.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>The toolbar comes back after every capture, cancel or error, and stays open until you close it.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span><strong>Firefox:</strong> the Firefox Add-ons version jumps from 3.2 to 4.2.1. On Firefox, usage stats are sent only if you opt in.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v4.2">
+        <div class="rel-when"><a class="ver" href="#v4.2">4.2</a><time datetime="2026-10-16">Oct 16, 2026</time></div>
+        <div class="rel-body">
+          <h2>Whole-page PNGs and smarter picking</h2>
+          <ul>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>Full page PNG:</strong> DivPic scrolls the page, captures each screen and stitches them into one image, up to 32,000px tall.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>A label over the highlighted element shows its tag, id, class and size before you click.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>Press Arrow Up or Arrow Down to move to the parent or a child element before you click.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>Picking reaches into open shadow DOM.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>In multi-select, picking a parent drops its children you already picked, and elements the page removes drop out too.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span>An element partly off screen is captured whole, instead of with a blank area where it overflowed.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v4.1">
+        <div class="rel-when"><a class="ver" href="#v4.1">4.1</a><time datetime="2026-06-02">Jun 2, 2026</time></div>
+        <div class="rel-body">
+          <h2>A cleaner full-page shot</h2>
+          <ul>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span>The toolbar hides itself before a full page PNG, so it no longer shows up in the screenshot.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>Anonymous usage stats, such as which export formats get used. Nothing from the page you capture is sent. The <a href="privacy.html">privacy policy</a> lists what is.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v4.0">
+        <div class="rel-when"><a class="ver" href="#v4.0">4.0</a><time datetime="2026-05-31">May 31, 2026</time></div>
+        <div class="rel-body">
+          <h2>Figma mode and the in-page toolbar</h2>
+          <ul>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>Figma mode:</strong> copy an element or a whole page and paste it into Figma as editable frames with auto layout.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>Toolbar:</strong> a floating toolbar on the page replaces the popup. Click the DivPic icon to open it.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>Full page capture</strong> as PNG or SVG.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>Sign in with Google to use Figma mode. PNG and SVG still need no account.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>A "Contact the builder" button in the toolbar.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>SVG exports embed images, canvases and videos, including images from other sites.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>The on-page badge tells you what to do next and has a Cancel button.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v3.2">
+        <div class="rel-when"><a class="ver" href="#v3.2">3.2</a><time datetime="2026-02-17">Feb 17, 2026</time></div>
+        <div class="rel-body">
+          <h2>Back to the popup</h2>
+          <ul>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>The side panel from 3.1 is gone. DivPic works from its popup again.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v3.1">
+        <div class="rel-when"><a class="ver" href="#v3.1">3.1</a><time datetime="2026-02-15">Feb 15, 2026</time></div>
+        <div class="rel-body">
+          <h2>A side panel that guides you</h2>
+          <ul>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>Side panel:</strong> opens from the DivPic icon and stays open while you pick.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>On-screen instructions for single and multi-select.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>Clearer keyboard shortcut display.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span>Escape now reliably cancels a selection.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v3.0">
+        <div class="rel-when"><a class="ver" href="#v3.0">3.0</a><time datetime="2026-01-30">Jan 30, 2026</time></div>
+        <div class="rel-body">
+          <h2>Style your screenshots</h2>
+          <ul>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>PNG style:</strong> padding, corner radius, shadow and background, with a live preview. Your settings are kept.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>Copy an SVG to the clipboard as code.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>The shortcut hint matches your system: Cmd on a Mac, Ctrl elsewhere.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v2.1">
+        <div class="rel-when"><a class="ver" href="#v2.1">2.1</a><time datetime="2026-01-29">Jan 29, 2026</time></div>
+        <div class="rel-body">
+          <h2>Sharper SVG text</h2>
+          <ul>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>SVG text keeps its italics, letter and word spacing and underlines.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>Hidden, clipped and covered elements are left out of SVG exports.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>Images in SVG keep the cropping they have on the page.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span>Headings no longer show their text twice in an SVG.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>A "Contact Developer" link in the popup.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel" id="v2.0">
+        <div class="rel-when"><a class="ver" href="#v2.0">2.0</a><time datetime="2026-01-27">Jan 27, 2026</time></div>
+        <div class="rel-body">
+          <h2>SVG export and multi-select</h2>
+          <ul>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>SVG export:</strong> save an element as an editable vector.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span><strong>Multi-select:</strong> pick several elements and capture them together.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>Several elements in one SVG keep their positions from the page.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span>A redesigned popup.</span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="rel first" id="v1.0">
+        <div class="rel-when"><a class="ver" href="#v1.0">1.0</a><time datetime="2025-04-03">Apr 3, 2025</time></div>
+        <div class="rel-body">
+          <h2>Screenshot any element</h2>
+          <ul>
+            <li data-kind="new"><b class="tagk new">New</b><span>Click any element on a page to save it as a PNG.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>Copy the screenshot to the clipboard instead of saving it.</span></li>
+            <li data-kind="new"><b class="tagk new">New</b><span>A keyboard shortcut starts picking, and Escape stops it.</span></li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+    <p class="cl-empty" hidden>Nothing of that kind yet.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="icon.png" alt="">DivPic</a>
+    <span>© 2026 Ragul Sundaram</span>
+    <nav aria-label="Footer">
+      <a href="blog/index.html">Blog</a>
+      <a href="index.html#faq">Help</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:ragulsundaram15@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav border once the page scrolls.
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Filter by kind of change; a release with nothing of that kind steps out of the timeline.
+  const chips = document.querySelectorAll('.cl-filter button');
+  chips.forEach((b) => b.addEventListener('click', () => {
+    const kind = b.dataset.kind;
+    chips.forEach((c) => c.setAttribute('aria-pressed', c === b));
+    let any = false;
+    document.querySelectorAll('.rel').forEach((rel) => {
+      let shown = 0;
+      rel.querySelectorAll('li[data-kind]').forEach((li) => { const on = kind === 'all' || li.dataset.kind === kind; li.hidden = !on; if (on) shown++; });
+      rel.hidden = !shown;
+      if (shown) any = true;
+    });
+    document.querySelector('.cl-empty').hidden = any;
+  }));
+</script>
+<script src="get-menu.js"></script>
+</body>
+</html>
