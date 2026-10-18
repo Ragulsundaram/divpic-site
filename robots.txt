@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ragulsundaram.github.io/divpic-site/sitemap.xml
+Sitemap: https://divpic.in/sitemap.xml
