@@ -910,10 +910,11 @@ footer.site a:hover { color: var(--ink); }
 .rel-when time { font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .latest { margin-top: 6px; padding: 4px 10px; border-radius: 999px; font: 700 12px/1 var(--font-mono); color: var(--blue-ink); background: color-mix(in srgb, var(--tile-blue) 12%, var(--bg)); border: 1px solid color-mix(in srgb, var(--tile-blue) 35%, var(--line)); }
 /* Store pills: the version each browser's store has right now (moved on each release/approval). Sits inline in the release heading. */
-.store { display: inline-flex; align-items: center; gap: 8px; margin-left: 10px; padding: 7px 14px 7px 10px; border-radius: 999px; font: 700 14px/1 var(--font-mono); color: var(--ink-2); background: var(--bg); border: 1px solid var(--line); cursor: default; vertical-align: 4px; letter-spacing: 0; }
+.store { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 10px; border-radius: 999px; font: 700 14px/1 var(--font-mono); color: var(--ink-2); background: var(--bg); border: 1px solid var(--line); cursor: default; letter-spacing: 0; }
 .store img { width: 20px; height: 20px; display: block; }
 .rel-body { padding-left: 28px; }
-.rel-body h2 { font-size: clamp(24px, 2.6vw, 30px); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 18px; text-wrap: balance; }
+/* Flex so a .store pill centers on the title line in every browser (no baseline math). Headings without a pill render the same. */
+.rel-body h2 { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 18px; text-wrap: balance; }
 .rel-body ul { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
 .rel-body li { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 14px 20px; font-size: 16px; }
 .rel-body li[hidden] { display: none; }
