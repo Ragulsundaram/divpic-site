@@ -107,8 +107,8 @@
           <button type="button" class="dp-brand" aria-label="DivPic"><img class="dp-logo" alt="" src="icon.png"><span class="dp-name">DivPic</span></button>
           <span class="dp-sep"></span>
           <button type="button" class="dp-figma" role="switch" aria-checked="false"><span class="dp-figma-label">Figma</span><span class="dp-switch"></span></button>
-          <span class="dp-sep"></span>
-          <span class="dp-opts">
+          <span class="dp-sep standard-only"></span>
+          <span class="dp-opts standard-only">
             <span class="seg">
               <button type="button" class="tb on" aria-label="Single element" aria-pressed="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.25" y="3.25" width="9.5" height="9.5" rx="2.2"/></svg></button>
               <button type="button" class="tb" aria-label="Multiple elements" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5.5" y="5.5" width="7.5" height="7.5" rx="1.8"/><path d="M10 3.25H4.6A1.35 1.35 0 0 0 3.25 4.6V10" stroke-linecap="round"/></svg></button>
@@ -120,9 +120,16 @@
             <span class="seg seg-text"><button type="button" class="tb on" aria-pressed="true">PNG</button><button type="button" class="tb" aria-pressed="false">SVG</button></span>
           </span>
           <span class="dp-sep"></span>
-          <button type="button" class="dp-btn dp-btn-primary"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg>Select Element</button>
-          <button type="button" class="dp-btn"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V3.5A1.5 1.5 0 0 1 3.5 2H6"/><path d="M10 2h2.5A1.5 1.5 0 0 1 14 3.5V6"/><path d="M14 10v2.5a1.5 1.5 0 0 1-1.5 1.5H10"/><path d="M6 14H3.5A1.5 1.5 0 0 1 2 12.5V10"/></svg>Full Page</button>
+          <span class="seg standard-only">
+            <button type="button" class="tb act" data-act="element" aria-label="Select element" data-tip="Select element"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg></button>
+            <button type="button" class="tb act" data-act="full" aria-label="Full page" data-tip="Full page"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V3.5A1.5 1.5 0 0 1 3.5 2H6"/><path d="M10 2h2.5A1.5 1.5 0 0 1 14 3.5V6"/><path d="M14 10v2.5a1.5 1.5 0 0 1-1.5 1.5H10"/><path d="M6 14H3.5A1.5 1.5 0 0 1 2 12.5V10"/></svg></button>
+          </span>
+          <span class="figma-only">
+            <button type="button" class="dp-btn dp-btn-primary" data-act="element"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/></svg>Element</button>
+            <button type="button" class="dp-btn" data-act="full"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6V3.5A1.5 1.5 0 0 1 3.5 2H6"/><path d="M10 2h2.5A1.5 1.5 0 0 1 14 3.5V6"/><path d="M14 10v2.5a1.5 1.5 0 0 1-1.5 1.5H10"/><path d="M6 14H3.5A1.5 1.5 0 0 1 2 12.5V10"/></svg>Full Page</button>
+          </span>
           <span class="dp-sep"></span>
+          <button type="button" class="dp-iconbtn dp-inspect" aria-label="Inspect" aria-pressed="false" data-tip="Inspect"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
           <button type="button" class="dp-iconbtn" aria-label="Settings"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z"/></svg></button>
           <button type="button" class="dp-iconbtn" aria-label="Close toolbar"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
         </div>
@@ -276,46 +283,106 @@
         <h2>Small toolbar. Lots of reach.</h2>
         <p>Everything you need to get a clean piece of a web page into your work, without the cropping.</p>
       </div>
-      <div class="feats">
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><g class="rays"><path d="M7 2.5V5"/><path d="M2.5 7H5"/><path d="M3.8 3.8l1.8 1.8"/><path d="M11.2 3.6 9.6 5.2"/></g><path class="ptr" d="M9 9l4.6 11.5 1.8-5.1 5.1-1.8z"/></svg></span>
+      <div class="feats bento">
+        <article class="feat big" data-viz="pick">
           <h3>Click any element</h3>
-          <p>Hover to highlight, click to capture. No dragging a crop box around and trying again.</p>
+          <p>A label shows its tag, class and size. Click, and it's captured.</p>
+          <div class="viz viz-pick" aria-hidden="true">
+            <div class="pk-page">
+              <div class="pk-nav"><span class="pk-brand"><i class="pk-logo"></i>Northwind</span><span class="pk-btn">Sign up</span></div>
+              <div class="pk-hero" data-t="section.hero" data-s="1200 × 420"><b>Simple plans for growing teams</b><span class="pk-cta" data-t="a.btn-primary" data-s="168 × 48">Start free trial</span></div>
+              <div class="pk-cards">
+                <div class="pk-card" data-t="div.plan" data-s="368 × 240"><small>Starter</small><b>$0</b><ul><li>3 projects</li><li>Basic analytics</li></ul><span class="pk-choose">Choose</span></div>
+                <div class="pk-card pro" data-t="div.plan.pro" data-s="368 × 240"><small>Pro</small><b>$24</b><ul><li>Unlimited sites</li><li>Custom domains</li><li>Priority support</li></ul><span class="pk-choose">Get Pro</span></div>
+                <div class="pk-card" data-t="div.plan" data-s="368 × 240"><small>Team</small><b>$79</b><ul><li>Everything in Pro</li><li>SSO and roles</li></ul><span class="pk-choose">Contact</span></div>
+              </div>
+              <span class="pk-toast"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Saved as PNG</span>
+            </div>
+            <span class="pk-box"><em><b>div.plan.pro</b><span>368 × 300</span></em><i></i><i></i><i></i><i></i></span>
+            <span class="pk-cursor"><svg viewBox="0 0 24 24"><path d="M5 3l14 7.2-6.2 1.8-3 6z"/></svg></span>
+          </div>
         </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><path class="c tl" d="M4 9V4h5"/><path class="c tr" d="M15 4h5v5"/><path class="c br" d="M20 15v5h-5"/><path class="c bl" d="M9 20H4v-5"/><path class="scroll" d="M9 10h6M9 14h6"/></svg></span>
-          <h3>Full page in one go</h3>
-          <p>Scrolls and stitches the whole page into one image, including everything below the fold.</p>
+        <article class="feat wide" data-viz="inspect">
+          <h3>Inspect any element</h3>
+          <p>Point at anything to see its box, type, colours and CSS.</p>
+          <div class="viz viz-ins" aria-hidden="true">
+            <div class="in-page">
+              <b class="in-h">Ship your next site</b>
+              <span class="in-sub">Templates and hosting in one place.</span>
+              <span class="in-btn">Get started</span>
+              <span class="in-hl"></span>
+              <span class="pk-cursor"><svg viewBox="0 0 24 24"><path d="M5 3l14 7.2-6.2 1.8-3 6z"/></svg></span>
+            </div>
+            <div class="in-panel">
+              <code class="in-tag">a.btn</code>
+              <div class="in-box"><small>margin</small><div><small>padding <b class="in-p">12 20</b></small><span class="in-c">132 × 44</span></div></div>
+              <div class="in-row"><small>Font</small><span class="in-font">Inter 600 · 15px</span></div>
+            </div>
+          </div>
         </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><path class="l1" d="M12 3l9 5-9 5-9-5z"/><path class="l2" d="M3 12.5l9 5 9-5"/><path class="l3" d="M3 16.5l9 5 9-5"/></svg></span>
-          <h3>Real Figma layers</h3>
-          <p>Paste frames, live text and images you can edit, with flex and grid kept as auto layout.</p>
+        <article class="feat" data-viz="multi">
+          <h3>One element or several</h3>
+          <p>Pick a few, press Enter, and get them in one image.</p>
+          <div class="viz viz-multi" aria-hidden="true">
+            <div class="mu-mode"><span class="mu-seg"><i class="on"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.25" y="3.25" width="9.5" height="9.5" rx="2.2"/></svg></i><i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5.5" y="5.5" width="7.5" height="7.5" rx="1.8"/><path d="M10 3.25H4.6A1.35 1.35 0 0 0 3.25 4.6V10" stroke-linecap="round"/></svg></i></span><small class="mu-label">Single element</small></div>
+            <div class="mu-dash">
+              <div class="mu-kpi"><small>Revenue</small><b>$48.2k</b></div>
+              <div class="mu-kpi"><small>Orders</small><b>1,284</b></div>
+              <div class="mu-kpi"><small>Refunds</small><b>12</b></div>
+              <div class="mu-kpi"><small>Visitors</small><b>9.1k</b></div>
+            </div>
+            <div class="mu-badge"><span class="mu-text">Select an element to capture</span></div>
+          </div>
         </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><path class="curve" pathLength="1" d="M5 18C8 5 16 19 19 6"/><rect class="a1" x="3" y="16" width="4" height="4" rx="1"/><rect class="a2" x="17" y="4" width="4" height="4" rx="1"/></svg></span>
-          <h3>Crisp SVG export</h3>
-          <p>Vectors for decks and docs that stay sharp at any size, at any zoom.</p>
+        <article class="feat" data-viz="fonts">
+          <h3>Fonts and type styles</h3>
+          <p>Every family and weight, and hover any text to name it.</p>
+          <div class="viz viz-fonts" data-f="tight" aria-hidden="true">
+            <div class="fo-card"><b class="fo-aa">Aa</b><span><b class="fo-name">Inter Tight</b><small class="fo-role">Headings · 600, 700</small></span></div>
+            <div class="fo-chips"><div class="fo-row on" data-f="tight" data-n="Inter Tight" data-r="Headings · 600, 700"><b>Inter Tight</b></div><div class="fo-row" data-f="sans" data-n="Inter" data-r="Body · 400, 500"><b>Inter</b></div><div class="fo-row" data-f="serif" data-n="Georgia" data-r="Quotes · 400 italic"><b>Georgia</b></div></div>
+          </div>
         </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle class="sun" cx="9" cy="10" r="1.8"/><path class="hill" d="M3.5 18l5.5-5 4 3.5 3-2.5 4.5 4"/></svg></span>
-          <h3>Sharp PNGs</h3>
-          <p>Captured at your screen's full resolution, so text stays crisp on retina displays.</p>
+        <article class="feat wide">
+          <h3>DESIGN.md for your coding agent</h3>
+          <p>Turns any site's look into a doc Claude Code, Cursor or Codex can build from.</p>
+          <div class="viz viz-dmd" aria-hidden="true">
+            <div class="dm-doc">
+              <div class="dm-tabs"><span class="on">DESIGN.md</span><span>SKILL.md</span></div>
+              <div class="dm-line h1"># Design system</div>
+              <div class="dm-line h2">## Colors</div>
+              <div class="dm-line"><i style="--sw:#0e0e10"></i><i style="--sw:#6d5efc"></i><i style="--sw:#22c55e"></i><i style="--sw:#f4f4f6"></i><code>primary #6D5EFC</code></div>
+              <div class="dm-line h2">## Type</div>
+              <div class="dm-line"><code>Inter Tight 700 · 48 / 52</code></div>
+            </div>
+            <div class="dm-agents">
+              <span class="dm-agent claude"><svg viewBox="0 0 24 24"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg>Claude Code</span>
+              <span class="dm-agent"><svg viewBox="0 0 24 24"><path d="M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23"/></svg>Cursor</span>
+              <span class="dm-agent"><svg viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>Codex</span>
+              <span class="dm-toast">Prompt copied</span>
+            </div>
+          </div>
         </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><rect class="back" x="4" y="4" width="11" height="11" rx="2.5"/><rect class="front" x="9" y="9" width="11" height="11" rx="2.5"/></svg></span>
-          <h3>Copy, don't download</h3>
-          <p>Send a capture straight to the clipboard and paste it into Slack, Notion or a doc.</p>
-        </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle class="k1" cx="8" cy="6" r="2"/><circle class="k2" cx="15" cy="12" r="2"/><circle class="k3" cx="10" cy="18" r="2"/></svg></span>
-          <h3>Presentation styles</h3>
-          <p>Add a background, padding, rounded corners and a shadow, then save the look as a preset.</p>
-        </article>
-        <article class="feat">
-          <span class="fi"><svg viewBox="0 0 24 24"><path class="shackle" d="M8 11V7.5a4 4 0 0 1 8 0V11"/><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M12 15v2"/></svg></span>
-          <h3>Private by default</h3>
-          <p>PNGs and SVGs are made in your browser. Nothing gets uploaded to a server.</p>
+        <article class="feat wide">
+          <h3>Captures the full page in one go</h3>
+          <p>Scrolls the page and stitches it into one tall PNG.</p>
+          <div class="viz viz-full" aria-hidden="true">
+            <div class="fp-col">
+              <small class="fp-cap">On screen</small>
+            <div class="fp-win">
+                <div class="fp-bar"><i></i><i></i><i></i></div><span class="fp-thumb"></span>
+                <div class="fp-view">
+                  <div class="fp-doc fp-long"><div class="d-nav"><b>Northwind</b><span>Product</span><span>Pricing</span><span>Docs</span></div><div class="d-hero"><b>Build better pages</b><span>Templates, components and hosting in one place.</span><i>Start free</i></div><div class="d-cards"><div><i></i><b>Templates</b></div><div><i></i><b>Components</b></div><div><i></i><b>Hosting</b></div></div><div class="d-text"><b>Why teams switch</b><span>Pages load fast, edits go live in seconds, and every change is versioned so nothing gets lost.</span></div><div class="d-img"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><circle cx="78" cy="12" r="5"/><path d="M0 40 L22 18 L38 30 L58 12 L100 40Z"/></svg></div><div class="d-foot"><span><b>Product</b>Templates<br>Pricing</span><span><b>Company</b>About<br>Careers</span><span><b>Help</b>Docs<br>Contact</span></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="fp-col">
+              <small class="fp-cap"><svg viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14"/></svg>full-page.png</small>
+              <div class="fp-shot">
+                <div class="fp-doc"><div class="d-nav"><b>Northwind</b><span>Product</span><span>Pricing</span><span>Docs</span></div><div class="d-hero"><b>Build better pages</b><span>Templates, components and hosting in one place.</span><i>Start free</i></div><div class="d-cards"><div><i></i><b>Templates</b></div><div><i></i><b>Components</b></div><div><i></i><b>Hosting</b></div></div><div class="d-text"><b>Why teams switch</b><span>Pages load fast, edits go live in seconds, and every change is versioned so nothing gets lost.</span></div><div class="d-img"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><circle cx="78" cy="12" r="5"/><path d="M0 40 L22 18 L38 30 L58 12 L100 40Z"/></svg></div><div class="d-foot"><span><b>Product</b>Templates<br>Pricing</span><span><b>Company</b>About<br>Careers</span><span><b>Help</b>Docs<br>Contact</span></div></div>
+                <span class="fp-frame"></span>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </div>
@@ -637,16 +704,21 @@
   bar.addEventListener('click', (e) => {
     const btn = e.target.closest('button');
     if (!btn) return;
-    if (btn.classList.contains('tb')) {
-      btn.parentElement.querySelectorAll('.tb').forEach((b) => { b.classList.toggle('on', b === btn); b.setAttribute('aria-pressed', b === btn); });
-    } else if (btn.classList.contains('dp-figma')) {
-      btn.setAttribute('aria-checked', btn.getAttribute('aria-checked') !== 'true');
-    } else if (btn.classList.contains('dp-btn-primary')) {
+    if (btn.dataset.act === 'element') {
       stopTour();
       select(selected === page ? page.querySelector('[data-initial]') : selected, true);
-    } else if (btn.classList.contains('dp-btn')) {
+    } else if (btn.dataset.act === 'full') {
       stopTour();
       select(page, true);
+    } else if (btn.classList.contains('tb')) {
+      btn.parentElement.querySelectorAll('.tb').forEach((b) => { b.classList.toggle('on', b === btn); b.setAttribute('aria-pressed', b === btn); });
+    } else if (btn.classList.contains('dp-figma')) {
+      // Figma mode swaps the capture options for labelled Element / Full Page buttons, like the real toolbar.
+      const on = btn.getAttribute('aria-checked') !== 'true';
+      btn.setAttribute('aria-checked', on);
+      bar.classList.toggle('figma', on);
+    } else if (btn.classList.contains('dp-inspect')) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') !== 'true');
     } else if (btn.classList.contains('dp-brand')) {
       bar.classList.remove('min');
     } else if (btn.getAttribute('aria-label') === 'Close toolbar') {
@@ -704,6 +776,130 @@
     }), { rootMargin: '-45% 0px -45% 0px' });
     feats.forEach((el) => io.observe(el));
   }
+
+  // Bento pictures sit on a still frame and play while their tile is lit (.play):
+  // under the mouse, or crossing the middle of the screen on touch.
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const vizSteps = {
+    // Move to an element, show the hover label, click, hold, then the next one.
+    pick(card) {
+      const box = card.querySelector('.viz-pick'), page = box.querySelector('.pk-page'), hl = box.querySelector('.pk-box'), ptr = box.querySelector('.pk-cursor');
+      const tag = hl.querySelector('em b'), size = hl.querySelector('em span');
+      const order = ['.pk-card.pro', '.pk-cta', '.pk-hero'].map((s) => box.querySelector(s));
+      let n = 0, phase = 0;
+      const at = (el) => {
+        const a = box.getBoundingClientRect(), r = el.getBoundingClientRect();
+        return { x: r.left - a.left, y: r.top - a.top, w: r.width, h: r.height };
+      };
+      const point = (r) => { ptr.style.transform = `translate(${r.x + r.w * 0.6}px, ${r.y + r.h * 0.55}px)`; };
+      // Off the page, under its bottom-right corner, where a real pointer would come from.
+      const outside = () => { const r = at(page); ptr.style.transform = `translate(${r.x + r.w - 46}px, ${r.y + r.h + 2}px)`; };
+      const clear = () => { box.classList.remove('picked'); hl.classList.remove('on'); };
+      return {
+        tick() {
+          if (n === order.length) { clear(); outside(); n = 0; phase = 0; return 1300; }
+          const el = order[n], r = at(el);
+          if (phase === 0) { clear(); point(r); phase = 1; return 800; }
+          if (phase === 1) {
+            Object.assign(hl.style, { left: `${r.x}px`, top: `${r.y}px`, width: `${r.w}px`, height: `${r.h}px` });
+            tag.textContent = el.dataset.t; size.textContent = el.dataset.s;
+            hl.classList.toggle('flip', r.y - at(page).y < 90);
+            hl.classList.add('on'); phase = 2; return 1000;
+          }
+          if (phase === 2) { box.classList.add('picked'); phase = 3; return 1800; }
+          n += 1; phase = 0; return 200;
+        },
+        still() { clear(); outside(); n = 0; phase = 0; },
+      };
+    },
+    // Point at the button, then the heading; the panel reads whatever is under the cursor.
+    inspect(card) {
+      const box = card.querySelector('.viz-ins'), page = box.querySelector('.in-page'), hl = box.querySelector('.in-hl'), ptr = box.querySelector('.pk-cursor');
+      const set = (cls, v) => { box.querySelector(cls).textContent = v; };
+      const targets = [
+        { el: page.querySelector('.in-btn'), tag: 'a.btn', p: '12 20', c: '132 × 44', font: 'Inter 600 · 15px' },
+        { el: page.querySelector('.in-h'), tag: 'h2.title', p: '0', c: '320 × 40', font: 'Inter Tight 700 · 32px' },
+      ];
+      let n = 0, phase = 0;
+      const rect = (t) => { const a = page.getBoundingClientRect(), r = t.el.getBoundingClientRect(); return { x: r.left - a.left, y: r.top - a.top, w: r.width, h: r.height }; };
+      const point = (t) => { const r = rect(t); ptr.style.transform = `translate(${r.x + r.w * 0.6}px, ${r.y + r.h * 0.6}px)`; };
+      // The box and the panel follow the pointer: they change only once it has arrived.
+      const frame = (t) => {
+        const r = rect(t);
+        Object.assign(hl.style, { left: `${r.x - 3}px`, top: `${r.y - 3}px`, width: `${r.w + 6}px`, height: `${r.h + 6}px` });
+        set('.in-tag', t.tag); set('.in-p', t.p); set('.in-c', t.c); set('.in-font', t.font);
+      };
+      return {
+        tick() {
+          if (phase === 0) { box.classList.add('swap'); point(targets[n]); phase = 1; return 750; }
+          frame(targets[n]); box.classList.remove('swap');
+          n = (n + 1) % targets.length; phase = 0; return 2400;
+        },
+        still() { box.classList.remove('swap'); point(targets[0]); frame(targets[0]); n = 1; phase = 0; },
+      };
+    },
+    // Single: one click, one PNG. Then Multiple: three picks, Enter, one image.
+    multi(card) {
+      const box = card.querySelector('.viz-multi'), segs = box.querySelectorAll('.mu-seg i'), kpis = box.querySelectorAll('.mu-kpi');
+      const label = box.querySelector('.mu-label'), text = box.querySelector('.mu-text');
+      const mode = (m) => { segs.forEach((s, k) => s.classList.toggle('on', k === m)); label.textContent = m ? 'Multiple elements' : 'Single element'; };
+      const say = (html) => { text.innerHTML = html; };
+      const pick = (ks) => kpis.forEach((k, i) => k.classList.toggle('sel', ks.includes(i)));
+      const beats = [
+        () => { mode(0); box.classList.remove('shot'); pick([]); say('Select an element to capture'); return 700; },
+        () => { pick([0]); say('<b>✓</b> Saved as PNG'); return 1300; },
+        () => { pick([]); mode(1); say('Click elements to select'); return 800; },
+        () => { pick([0]); say('<em>1 selected</em> Enter to capture'); return 550; },
+        () => { pick([0, 1]); say('<em>2 selected</em> Enter to capture'); return 550; },
+        () => { pick([0, 1, 3]); say('<em>3 selected</em> Enter to capture'); return 1200; },
+        () => { box.classList.add('shot'); say('<b>✓</b> Saved as one PNG'); return 1800; },
+      ];
+      let n = 0;
+      return {
+        tick() { const wait = beats[n](); n = (n + 1) % beats.length; return wait; },
+        still() { box.classList.remove('shot'); mode(1); pick([0, 1, 3]); say('<em>3 selected</em> Enter to capture'); n = 0; },
+      };
+    },
+    // Step through the families; the specimen is drawn in each one.
+    fonts(card) {
+      const box = card.querySelector('.viz-fonts'), rows = [...box.querySelectorAll('.fo-row')];
+      let n = 0;
+      const show = (row) => {
+        rows.forEach((r) => r.classList.toggle('on', r === row));
+        box.dataset.f = row.dataset.f;
+        box.querySelector('.fo-name').textContent = row.dataset.n;
+        box.querySelector('.fo-role').textContent = row.dataset.r;
+      };
+      return {
+        tick() {
+          n = (n + 1) % rows.length;
+          const row = rows[n];
+          box.classList.add('swap');
+          setTimeout(() => { show(row); box.classList.remove('swap'); }, 250);
+          return 2000;
+        },
+        still() { box.classList.remove('swap'); n = 0; show(rows[0]); },
+      };
+    },
+  };
+  const bento = [...document.querySelectorAll('.bento .feat')];
+  const play = (card, on) => {
+    if (on === card.vizOn) return;
+    card.vizOn = on;
+    clearTimeout(card.vizTimer);
+    if (!card.viz) return;
+    if (!on || reduced) { card.viz.still(); return; }
+    const tick = () => { card.vizTimer = setTimeout(tick, card.viz.tick()); };
+    tick();
+  };
+  bento.forEach((card) => {
+    if (card.dataset.viz) { card.viz = vizSteps[card.dataset.viz](card); card.viz.still(); }
+    new MutationObserver(() => play(card, card.classList.contains('play'))).observe(card, { attributes: true, attributeFilter: ['class'] });
+  });
+  // Still frames are measured, so measure again once fonts have loaded and when the layout changes.
+  const settle = () => bento.forEach((card) => { if (card.viz && !card.vizOn) card.viz.still(); });
+  addEventListener('load', settle);
+  addEventListener('resize', settle);
 </script>
 <script src="get-menu.js"></script>
 <script src="faq.js"></script>
