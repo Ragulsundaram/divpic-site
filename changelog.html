@@ -40,7 +40,7 @@
     <div class="cl-head">
       <p class="kicker">Changelog</p>
       <h1>Every release, newest first.</h1>
-      <p>What changed in DivPic, from the first element screenshot to Figma mode. Dates are when each version was finished, so a store can show it a day or two later. A browser pill marks the version its store has right now — stores review at their own pace. Safari is coming.</p>
+      <p>What changed in DivPic, from the first element screenshot to Figma mode. Dates are when each version was finished, so a store can show it a day or two later. A browser pill marks the version its store has right now — stores review at their own pace.</p>
       <div class="cl-filter" role="group" aria-label="Show">
         <button type="button" aria-pressed="true" data-kind="all">All</button>
         <button type="button" aria-pressed="false" data-kind="new"><i class="k new"></i>New</button>
@@ -50,10 +50,24 @@
     </div>
 
     <ol class="timeline">
-      <li class="rel" id="v5.1">
-        <div class="rel-when"><a class="ver" href="#v5.1">5.1</a><time datetime="2026-10-22">Oct 22, 2026</time><span class="latest">Latest</span></div>
+      <li class="rel" id="v5.2">
+        <div class="rel-when"><a class="ver" href="#v5.2">5.2</a><time datetime="2026-10-26">Oct 26, 2026</time><span class="latest">Latest</span></div>
         <div class="rel-body">
-          <h2>Figma layers you can edit <span class="store" title="The version on the Chrome Web Store right now"><img src="images/browsers/chrome.svg" alt="" width="20" height="20">Chrome</span></h2>
+          <h2>Full-page Figma exports in seconds <span class="store" title="The version on the Chrome Web Store right now"><img src="images/browsers/chrome.svg" alt="" width="20" height="20">Chrome</span></h2>
+          <ul>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span><strong>Figma:</strong> full-page exports finish in seconds instead of minutes, and no longer wait forever on images that never load.</span></li>
+            <li data-kind="improved"><b class="tagk improved">Improved</b><span><strong>Inspect:</strong> clearer labels and descriptions across the panels, and a new layout for DESIGN.md.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span><strong>Figma:</strong> logos drawn with a CSS mask paste as the logos, not as plain boxes.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span><strong>Figma:</strong> icon-font icons paste, and wide pages keep their centered layout instead of squeezing to the left.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span><strong>Figma:</strong> illustrations with images inside paste with their pictures, and transparent images no longer paste black.</span></li>
+            <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span><strong>Figma:</strong> headlines and buttons over a background video paste on top of it.</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="rel" id="v5.1">
+        <div class="rel-when"><a class="ver" href="#v5.1">5.1</a><time datetime="2026-10-22">Oct 22, 2026</time></div>
+        <div class="rel-body">
+          <h2>Figma layers you can edit</h2>
           <ul>
             <li data-kind="improved"><b class="tagk improved">Improved</b><span><strong>Figma:</strong> far more frames paste with auto layout, and boxes hug their content or fill their parent instead of being fixed sizes.</span></li>
             <li data-kind="improved"><b class="tagk improved">Improved</b><span><strong>Figma:</strong> edit a button label or a paragraph and its frame grows with it.</span></li>
@@ -120,7 +134,7 @@
       <li class="rel" id="v4.2.1">
         <div class="rel-when"><a class="ver" href="#v4.2.1">4.2.1</a><time datetime="2026-10-17">Oct 17, 2026</time></div>
         <div class="rel-body">
-          <h2>Clean element shots on busy pages</h2>
+          <h2>Clean element shots on busy pages <span class="store" title="The version on the Mac App Store right now — a newer one is in Apple's review"><img src="images/browsers/safari.svg" alt="" width="20" height="20">Safari</span></h2>
           <ul>
             <li data-kind="fixed"><b class="tagk fixed">Fixed</b><span>Capturing an element on a page with a pinned or scroll-linked header, like github.com, no longer bakes strips of that header and other sticky bars into the PNG.</span></li>
             <li data-kind="improved"><b class="tagk improved">Improved</b><span>An element that fits on screen is scrolled fully into view and captured in one shot.</span></li>
