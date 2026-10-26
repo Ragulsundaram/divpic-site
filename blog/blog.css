@@ -32,6 +32,7 @@
 .search svg { position: absolute; left: 20px; top: 50%; width: 20px; height: 20px; transform: translateY(-50%); stroke: var(--ink-2); fill: none; stroke-width: 2; }
 
 .featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 56px 0 0; }
+.featured[hidden] { display: none; }
 .featured a { display: flex; flex-direction: column; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); text-decoration: none; transition: transform .15s var(--ease), border-color .15s var(--ease); }
 .featured a:hover { transform: translateY(-2px); border-color: var(--ink); }
 .featured img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; height: auto; background: var(--soft); }
